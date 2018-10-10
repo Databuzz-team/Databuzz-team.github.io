@@ -1,3 +1,241 @@
+body{
+  font-family: 'Boogaloo', 'Stylish', sans-serif, cursive;
+  font-size: 14px;
+  cursor: default;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  clear: both;
+}
+
+.footer{
+  padding-bottom: 10px;
+}
+
+.footer span{
+  color: #bbb;
+}
+
+.page-top .nav a{
+  color: #999;
+}
+
+.page-top .nav a.current{
+  /* color: #00a178; */
+  color: #333;
+}
+
+.post .post-title a{
+  /* font-family: 'Cute Font', sans-serif; */
+  color: #333;
+}
+
+.post .post-title a:hover{
+  text-decoration: none;
+  color: #4786D6;
+}
+
+.post .post-footer{
+
+}
+
+.post .post-footer .meta{
+  height: auto;
+}
+
+.post .post-footer .meta .info{
+  float: none;
+}
+
+.sidebar .logo-title .description{
+  color: #333;
+}
+
+.title_description{
+  margin: 0;
+}
+
+.content > .post > .post-content > p{
+  /* cursor: default!important; */
+  font-family: Helvetica Neue;
+}
+
+.post-detail{
+  font-family: Helvetica Neue;
+}
+
+.page-top .information .avatar img{
+  margin-top: 3px;
+  border-radius: 0;
+}
+
 .sidebar_title{
   text-transform: none!important;
+  font-family: 'Luckiest Guy', cursive;
+  margin-top: 10px!important;
+  color: #333;
+}
+
+.page-top .nav{
+  font-size: 15px;
+}
+
+.post-footer-author{
+  width:18px;
+  position:relative;
+  top:5px;
+}
+
+.sort-author-avatar{
+  width: 36px;
+  position: relative;
+  top: 9px;
+  margin-right: 10px;
+}
+
+.general-ul{
+  list-style: none;
+  padding: 0;
+}
+
+.general-ul li{
+  float: left;
+  margin: 0 5px;
+}
+
+.sort_by_hr{
+  margin: 5px;
+}
+
+.sort_by_title{
+  color: #666;
+  margin: 0;
+  font-size: 15px;
+  clear: both;
+}
+
+.tag-li{
+  padding: 10px 0px;
+  font-size: 25px;
+}
+
+.tag-li-detail{
+  color: #4973FF!important;
+}
+
+.tag-li-detail:hover{
+  color: #333!important;
+}
+
+.sort-user-li{
+  float: none!important;
+  padding: 10px 5px;
+  position: relative;
+}
+
+.user-li-title{
+  font-size: 25px;
+  color: #333;
+  position: absolute;
+  top: 26px;
+}
+
+.listing-post{
+  margin-top: 10px;
+  height: 60px;
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.listing-tag-div{
+  position: absolute;
+  bottom: 10px;
+  left: 56px;
+}
+
+.post-time{
+  position: absolute;
+  bottom: 10px;
+}
+
+.listing-tag{
+  color: #C5C5C5
+}
+
+.listing-title-new{
+  font-size: 20px;
+}
+
+.tag-not-hover:hover{
+  color: #333!important;
+}
+
+.page-top .nav a.current:hover{
+  cursor: default!important;
+}
+
+.user-li{
+  width: 50%;
+  margin: 0!important;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.user-namecard-title{
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  margin: 0;
+  color: #333;
+}
+
+.avatar-about-us{
+  width: 72px;
+  height: 80px;
+}
+
+.user-articles-count{
+  display: block;
+  position: absolute;
+  left: 82px;
+  bottom: 55px;
+}
+
+.social-wrap{
+  position: absolute;
+  bottom: 20px;
+  left: 82px;
+}
+
+.about-social-icon{
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+.about-social-icon:first-child{
+  margin-left: 0;
+}
+
+.social-github{
+
+}
+
+.social-home{
+
+}
+
+@media screen and (max-width: 320px){
+  .information{
+    display: none;
+  }
 }
