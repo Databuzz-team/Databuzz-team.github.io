@@ -5,15 +5,14 @@
 	];
 	var index = 0;
 	var base_url = window.location.origin;
-	console.log(base_url.includes("https"))
 	if(!base_url.includes("https")){
 		base_url = base_url.replace("http:", "")
 	}else{
 		base_url = base_url.replace("https:", "")
 	}
-		 
 	for(var i = 0; i < names.length; i ++){
-		$.get(base_url + "/categories/" + names[i], function(data, status){
+		console.log(names[i])
+		$.get("categories/" + names[i], function(data, status){
 			var result = data.split("listing-post");
 			var num = result.length - 1;
 			$('.' + names[index]).text(num + " Articles");
