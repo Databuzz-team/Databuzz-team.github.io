@@ -7,7 +7,10 @@
 	var base_url = window.location.origin;
 	for(var i = 0; i < names.length; i ++){
 		$.ajax({
-			url: base_url + "/categories/" + names[i] + "/",
+			url: base_url + "/categories/" + names[i],
+			xhrFields: {
+        withCredentials: true
+	    },
 			success: function(data){
 				var result = data.split("listing-post");
 				var num = result.length - 1;
