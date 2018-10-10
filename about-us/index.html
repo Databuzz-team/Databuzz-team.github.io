@@ -13,8 +13,13 @@
 	}
 		 
 	for(var i = 0; i < names.length; i ++){
-		console.log(base_url)
-		$.ajax({
+		$.get(base_url + "/categories/" + names[i], function(data, status){
+			var result = data.split("listing-post");
+			var num = result.length - 1;
+			$('.' + names[index]).text(num + " Articles");
+			index++;
+		})
+		/* $.ajax({
 			url: base_url + "/categories/" + names[i],
 			xhrFields: {
         withCredentials: true
@@ -25,7 +30,7 @@
 				$('.' + names[index]).text(num + " Articles");
 				index++;
 			}
-		});
+		}); */
 	}
 	
 })
