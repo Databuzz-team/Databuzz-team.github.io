@@ -126,7 +126,28 @@ body{
 }
 
 .tag-li-detail{
-  color: #4973FF!important;
+  color: dodgerblue!important;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 0px 8px;
+}
+
+.tag_count{
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+  position: relative;
+  top: -4px;
+}
+
+.author_count{
+  margin-left: 5px;
 }
 
 .tag-li-detail:hover{
@@ -234,8 +255,43 @@ body{
 
 }
 
+.featured-tags-wrap{
+  width: 220px;
+  position: absolute;
+  left: 50%;
+  margin-left: -110px;
+  top: 50%;
+  margin-top: 150px;
+}
+
+.featured-tags-title{
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  margin: 0;
+}
+
+.featured-tags-ul{
+  list-style: none;
+  padding: 0;
+  max-height: 88px;
+  overflow: hidden;
+}
+
+.featured-tags-li{
+  color: #333!important;
+  display: inline-block;
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 320px){
   .information{
     display: none;
+  }
+}
+
+@media screen and (max-width: 520px){
+  .user-li{
+    width: 100%;
   }
 }

@@ -693,4 +693,8 @@ a.btn {
   .share {
     display: grid;
   }
+
+  .featured-tags-wrap{
+    display: none;
+  }
 }
