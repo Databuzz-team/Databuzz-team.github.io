@@ -4,6 +4,19 @@ body{
   cursor: default;
 }
 
+p{
+  color: #333;
+}
+
+li{
+  color: #333;
+}
+
+blockquote{
+  margin: 0;
+  border-left: #999 0.4em solid;
+}
+
 .clearfix:after {
   content: '.';
   display: block;
