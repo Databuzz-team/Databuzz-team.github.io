@@ -295,6 +295,7 @@ blockquote{
   color: #333!important;
   display: inline-block;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width: 320px){
