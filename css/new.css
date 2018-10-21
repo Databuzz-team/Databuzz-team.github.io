@@ -324,3 +324,21 @@ blockquote{
     width: 100%;
   }
 }
+
+@media screen and (min-width: 960px){
+  body{
+    overflow: hidden;
+  }
+
+  .content{
+    height: 100%;
+    float: none;
+    margin-top: 0px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
