@@ -17,6 +17,20 @@ blockquote{
   border-left: #999 0.4em solid;
 }
 
+.gist{
+  max-width: 80%;
+  /* margin-left: 10%; */
+  margin-top: 10px;
+}
+
+.gist-data{
+  max-height: 300px;
+}
+
+.gist iframe.render-viewer{
+  max-height: 260px;
+}
+
 .clearfix:after {
   content: '.';
   display: block;
@@ -269,10 +283,10 @@ blockquote{
 }
 
 .featured-tags-wrap{
-  width: 220px;
+  width: 260px;
   position: absolute;
   left: 50%;
-  margin-left: -110px;
+  margin-left: -130px;
   top: 50%;
   margin-top: 150px;
 }
@@ -282,6 +296,7 @@ blockquote{
   font-size: 15px;
   text-align: center;
   margin: 0;
+  color: rgba(0,0,0,0.5);
 }
 
 .featured-tags-ul{
