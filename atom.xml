@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Databuzz&#39;s Tech Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://databuzz-team.github.io/"/>
+  <updated>2018-10-21T13:39:04.588Z</updated>
+  <id>https://databuzz-team.github.io/</id>
+  
+  <author>
+    <name>Databuzz, Databuzz.team@gmail.com</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;Github&gt; Gist를 사용하여 Jupyter Notebook 포스팅하기</title>
+    <link href="https://databuzz-team.github.io/2018/10/21/Github-Gist/"/>
+    <id>https://databuzz-team.github.io/2018/10/21/Github-Gist/</id>
+    <published>2018-10-21T13:01:32.000Z</published>
+    <updated>2018-10-21T13:39:04.588Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Gist를-사용하면-아래처럼-소스코드를-임베딩-할-수-있다"><a href="#Gist를-사용하면-아래처럼-소스코드를-임베딩-할-수-있다" class="headerlink" title="Gist를 사용하면 아래처럼 소스코드를 임베딩 할 수 있다."></a><a href="https://gist.github.com/" target="_blank" rel="noopener">Gist</a>를 사용하면 아래처럼 소스코드를 임베딩 할 수 있다.</h5><p>아래의 예는 <strong>Jupyter Notebook</strong> 을 임베딩한 것이지만, 이 외에도 .py, .md, .html 등 소스 코드는 다 할 수 있다.</p><script src="https://gist.github.com/DanialDaeHyunNam/afc48b2814cd7798ee7dbaa00e321468.js"></script><p>사용하는 방법은 아래와 같다.</p><h3 id="1-먼저-Gist-사이트로-이동"><a href="#1-먼저-Gist-사이트로-이동" class="headerlink" title="1. 먼저 Gist 사이트로 이동"></a>1. 먼저 <a href="https://gist.github.com/" target="_blank" rel="noopener">Gist</a> 사이트로 이동</h3><p><img src="/images/danial/gist_1.png"><br>위의 사진처럼 코드를 적는 창이 있다. Jupyter Notebook의 경우에는 해당 파일을 <strong>Drag &amp; Drop</strong> 하면 된다.</p><h3 id="2-Indent-Mode를-Spaces에서-Tabs로-변경"><a href="#2-Indent-Mode를-Spaces에서-Tabs로-변경" class="headerlink" title="2. Indent Mode를 Spaces에서 Tabs로 변경"></a>2. Indent Mode를 Spaces에서 Tabs로 변경</h3><p><img src="/images/danial/gist_2.png"><br>이 경우는 <strong>Jupyter Notebook</strong> 을 임베딩하는 경우에만 적용될 수도 있는 사항이니 조심하자.</p><p>필자는 Jupyter Notebook을 처음부터 도전하였는데, Spaces의 경우에는 계속 Render를 실패하기에 이유를 찾아보다가 발견한 방법이다.</p><h3 id="3-Script-Copy"><a href="#3-Script-Copy" class="headerlink" title="3. Script Copy"></a>3. Script Copy</h3><p><img src="/images/danial/gist_3.png"><br>이미지처럼 Embed 옆에 아이콘을 클릭하면 아래처럼 <strong>script</strong> 태그가 복사된다. Markdown 파일이나 HTML에 붙여넣기하면 된다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://gist.github.com/&#123;UserId&#125;/&#123;script&#125;.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h3 id="Tip-1-이후에-다른-소스코드를-포스팅하고자-하면-Add-file이-아닌-New-gist로-새로운-파일들을-추가하면-된다"><a href="#Tip-1-이후에-다른-소스코드를-포스팅하고자-하면-Add-file이-아닌-New-gist로-새로운-파일들을-추가하면-된다" class="headerlink" title="Tip 1) 이후에 다른 소스코드를 포스팅하고자 하면 Add file이 아닌 New gist로 새로운 파일들을 추가하면 된다."></a>Tip 1) 이후에 다른 소스코드를 포스팅하고자 하면 Add file이 아닌 New gist로 새로운 파일들을 추가하면 된다.</h3><p><img src="/images/danial/gist_helper.png"></p><h3 id="Tip-2-이미-Gist에서-정해준-iframe의-크기를-조절하고-싶은-경우에는-아래의-css를-추가해주면-된다"><a href="#Tip-2-이미-Gist에서-정해준-iframe의-크기를-조절하고-싶은-경우에는-아래의-css를-추가해주면-된다" class="headerlink" title="Tip 2) 이미 Gist에서 정해준 iframe의 크기를 조절하고 싶은 경우에는 아래의 css를 추가해주면 된다."></a>Tip 2) 이미 Gist에서 정해준 iframe의 크기를 조절하고 싶은 경우에는 아래의 css를 추가해주면 된다.</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.gist</span>&#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">80%</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.gist-data</span>&#123;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.gist</span> <span class="selector-tag">iframe</span><span class="selector-class">.render-viewer</span>&#123;</span><br><span class="line">  <span class="attribute">max-height</span>: <span class="number">260px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;Gist를-사용하면-아래처럼-소스코드를-임베딩-할-수-있다&quot;&gt;&lt;a href=&quot;#Gist를-사용하면-아래처럼-소스코드를-임베딩-할-수-있다&quot; class=&quot;headerlink&quot; title=&quot;Gist를 사용하면 아래처럼 소스코드를 임베딩 할 
+      
+    
+    </summary>
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Git" scheme="https://databuzz-team.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;Machine Learning&gt; 비대칭 데이터 문제는 어떻게 해결해야 하나?</title>
+    <link href="https://databuzz-team.github.io/2018/10/21/Handle-Imbalanced-Data/"/>
+    <id>https://databuzz-team.github.io/2018/10/21/Handle-Imbalanced-Data/</id>
+    <published>2018-10-21T02:23:13.000Z</published>
+    <updated>2018-10-21T13:01:16.228Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p><blockquote><p><a href="https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/" target="_blank" rel="noopener">참고 블로그(8 Tactics to Combat Imbalanced Classes in Your Machine Learning Dataset) 링크</a><br><a href="https://machinelearningmastery.com/" target="_blank" rel="noopener">블로거 링크</a></p></blockquote><p>아직 데이터 사이언스에 입문한지 오래되지는 않았지만, 개인 프로젝트로 인스타그램 데이터를 크롤링하여 작업하면서 <strong>비대칭 데이터 문제(Imbalanced Data)</strong> 에 부딪혔다.</p><p>생각해보면 현실세계에서 우리가 예측하고자 하는 클래스가 Uniform하게 분포되어있을 확률은 낮은 것이 당연하다.</p><h3 id="비대칭-데이터란"><a href="#비대칭-데이터란" class="headerlink" title="비대칭 데이터란?"></a>비대칭 데이터란?</h3><p>비대칭 데이터는 일반적으로 분류 문제에서 클래스들이 균일하게 분포하지 않은 문제를 의미한다.</p><p>간단한 예를 들자면, 100개의 과일 사진 중에 사과 사진이 90개, 귤 사진이 10개인 경우다.</p><p>이 경우라면 100개 중에 랜덤하게 뽑은 사진이 무슨 사진인지 맞춰야 한다면 사과라고 말하는 것이 가장 합리적일 것이다. 이것이 비대칭 데이터에서 일어나는 가장 큰 문제점이다.</p><hr><p>이제 비대칭 문제에 대해서는 이해했을 것이다. 이제 문제를 해결하기 위해 취해야 할 전략(서두에서 링크한 블로그에서 소개한 8가지 전략)을 알아보자.</p><h2 id="1-데이터를-더-모을-수-있나"><a href="#1-데이터를-더-모을-수-있나" class="headerlink" title="1. 데이터를 더 모을 수 있나?"></a>1. 데이터를 더 모을 수 있나?</h2><p>너무 당연한 질문! 더 많은 데이터는 당연히 조금은 더 클래스 대칭적인 결과를 제공할 것이므로..</p><h2 id="2-평가-기준을-바꿔보자"><a href="#2-평가-기준을-바꿔보자" class="headerlink" title="2. 평가 기준을 바꿔보자."></a>2. 평가 기준을 바꿔보자.</h2><p><strong>Accuracy</strong> 는 비대칭 문제에서는 사용하면 안되는 평가 기준이다(<a href="https://en.wikipedia.org/wiki/Accuracy_paradox" target="_blank" rel="noopener">Accuracy Paradox</a>를 참고하자).</p><p>원문 저자는 자신의 포스트 <a href="https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/" target="_blank" rel="noopener">Classification Accuracy is Not Enough: More Performance Measures You Can Use</a> 에서 소개한 평가기준들을 추천했다.</p><ul><li>Confusion Matrix:<br>예측 결과를 테이블 형태로 보여준다.</li><li>Precision:<br>Positive 클래스에 속한다고 출력한 샘플 중 실제로 Positive 클래스에 속하는 샘플 수의 비율</li><li>Recall<br>실제 Positive 클래스에 속한 샘플 중에 Positive 클래스에 속한다고 출력한 표본의 수</li><li>F1 Score<br>정밀도(Precision)과 재현율(Recall)의 가중 조화 평균</li></ul><p>이 외에도</p><ul><li>Kappa(or Cohen’s kappa)<br>Accuracy를 정규화한 값으로 보여준다.</li><li>ROC Curves<br>ROC(Receiver Operator Characteristic) 커브는 클래스 판별 기준값의 변화에 따른 위양성률(fall-out)과 재현율(recall)의 변화를 시각화한 것이다.</li></ul><h2 id="3-데이터셋을-Re-샘플링하자"><a href="#3-데이터셋을-Re-샘플링하자" class="headerlink" title="3. 데이터셋을 Re-샘플링하자."></a>3. 데이터셋을 Re-샘플링하자.</h2><p>데이터 셋을 변형시켜서 전체 클래스의 분포를 균일하게 만드는 방법으로 두 가지 방법이 있다.</p><ol><li>Over-sampling</li><li>Under-sampling</li></ol><p>둘 다 사용해보는 것을 추천한다.</p><p><a href="https://datascienceschool.net/view-notebook/c1a8dad913f74811ae8eef5d3bedc0c3/" target="_blank" rel="noopener">비대칭 데이터 문제</a> &lt;- 이 링크에서 다양한 샘플링 방법을 시각화해서 설명한 자료들이 있으니 확인하자.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 다양한 샘플링 방법을 구현한 파이썬 패키지이다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$pip</span> install -U imbalanced-learn</span><br></pre></td></tr></table></figure><h2 id="4-가짜-데이터-샘플을-만들자"><a href="#4-가짜-데이터-샘플을-만들자" class="headerlink" title="4. 가짜 데이터 샘플을 만들자."></a>4. 가짜 데이터 샘플을 만들자.</h2><p>Over sampling의 기법은 가짜 데이터를 더 생성하는 것이니 위의 방법을 좀 더 발전시킨 전략이라고 보면 되겠다.</p><p><strong>Naive Bayes</strong> 알고리즘을 사용할 경우에는 생성도 가능하니 이를 이용하거나, 가장 인기있는 방법인 <strong>SMOTE(Synthetic Minority Over-sampling Technique)</strong> 를 사용하는 것을 추천한다.</p><p>SMOTE는 부족한 클래스의 모조 샘플을 만들어내는 것이다. 이 알고리즘은 2개 이상의 비슷한 객체들을 선택하여 거리를 재고 사이사이 새로운 데이터를 생성해나간다.</p><p>자세한 정보는 <a href="http://www.jair.org/papers/paper953.html" target="_blank" rel="noopener">링크</a>를 확인하자.</p><h2 id="5-다른-Algorithms을-사용해보자"><a href="#5-다른-Algorithms을-사용해보자" class="headerlink" title="5. 다른 Algorithms을 사용해보자."></a>5. 다른 Algorithms을 사용해보자.</h2><p>언제나 그렇듯, 자신이 가장 좋아하는 알고리즘을 모든 문제에 사용하지 않는 것을 추천한다.</p><p><strong>의사 결정 나무(Decision Tree)</strong> 는 비대칭 문제에서 성능이 좋은 경우가 많다.</p><p>C4.5, C5.0, CART and Random Forest 등 다양하게 사용해보는 것을 추천.</p><h2 id="6-모델에-제한을-준다"><a href="#6-모델에-제한을-준다" class="headerlink" title="6. 모델에 제한을 준다."></a>6. 모델에 제한을 준다.</h2><p><strong>Penalized classification(패널티가 있는 분류)</strong> 는 함수를 설정하여 부족한 클래스를 분류하는 것에 오류가 일어나게 만드는 것을 의미한다. 제한사항으로 설정한 함수(패널티 함수)는 부족한 클래스를 분류하는 것에 좀 더 집중을 할 수 있게 한다.</p><blockquote><p>penalized-SVM, penalized-LDA 등 penalized 된 버젼들이 존재한다.<br>그뿐만아니라, 패널라이즈드 모델들을 위해 Framework도 존재하는데, 예를들어 Weka의 <a href="http://weka.sourceforge.net/doc.dev/weka/classifiers/meta/CostSensitiveClassifier.html#CostSensitiveClassifier--" target="_blank" rel="noopener">CostSensitiveClassifier</a>가 있다.</p></blockquote><p>패널티 매트릭스를 만드는 것은 매우 복잡하여, 특정 알고리즘을 써야 하거나 Re-샘플링이 불가능한 경우에 사용하는 것이 좋다.</p><h2 id="7-다른-관점으로-시도하자"><a href="#7-다른-관점으로-시도하자" class="headerlink" title="7. 다른 관점으로 시도하자."></a>7. 다른 관점으로 시도하자.</h2><p>추천하는 방법으로는 <strong>Anomaly Detection</strong>, <strong>Change Detection</strong> 가 있다.</p><ul><li><a href="https://en.wikipedia.org/wiki/Anomaly_detection" target="_blank" rel="noopener">Anomaly Detection</a></li><li><a href="https://en.wikipedia.org/wiki/Change_detection" target="_blank" rel="noopener">Change Detection</a></li></ul><hr><h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p>위의 방법들은 당연하게 시행되어야 하는 순서를 보여준다고 생각한다. 조금 허무할 수도 있지만, 결국은 데이터 <strong>사이언티스트(Scientist)</strong> 라는 단어가 의미하듯.. 실험적인 정신을 가지고 다양한 각도에서 도전하고 가장 좋은 결과를 내기 위해 최선을 다해야 한다는 것..</p><hr><h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><p><a href="https://datascienceschool.net/view-notebook/731e0d2ef52c41c686ba53dcaf346f32/" target="_blank" rel="noopener">분류 성능 평가(데이터 사이언스 스쿨)</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-datase
+      
+    
+    </summary>
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://databuzz-team.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;Medium 블로그 번역&gt; Data Scientists에게 가장 요구되는 기술(Skills)들</title>
+    <link href="https://databuzz-team.github.io/2018/10/15/The-Most-in-Demand-Skills-for-Data-Scientists/"/>
+    <id>https://databuzz-team.github.io/2018/10/15/The-Most-in-Demand-Skills-for-Data-Scientists/</id>
+    <published>2018-10-15T12:28:03.000Z</published>
+    <updated>2018-10-17T03:53:25.359Z</updated>
+    
+    <content type="html"><![CDATA[<p>요즘 글로벌 시장에서 <strong>Data Scientists</strong> 부족으로 난리라고 한다.. 가장 요구되는 기술들이 무엇인지 분석한 기사가 있어서 번역을 통해서 소개하고자 한다 (자세한 내용은 아래의 링크를 통해서 원문을 확인하자).</p><blockquote><p><a href="https://towardsdatascience.com/the-most-in-demand-skills-for-data-scientists-4a4a8db896db" target="_blank" rel="noopener">원문(The Most in Demand Skills for Data Scientists) 링크</a><br><a href="https://towardsdatascience.com/@jeffhale" target="_blank" rel="noopener">저자 Jeff Hale 블로그 링크</a></p></blockquote><p>기사에서는 조사지역은 미국, 키워드는 “Data Scientist”와 “다른 키워드”를 AND 타입으로 검색하여 데이터 사이언티스트와 연관 키워드가 완전히 매칭되는 결과들만을 모아서 조사하였다. 사용한 채용 사이트는 <strong>LinkedIn, Indeed, SimplyHired, Monster, AngelList</strong>로 5가지이다.</p><p>먼저 아래의 그래프를 통해 요구되는 일반적 스킬들에 대해서 알아보자.<br>(그래프를 만드는데 사용된 자료 및 과정은 <a href="https://www.kaggle.com/discdiver/the-most-in-demand-skills-for-data-scientists/" target="_blank" rel="noopener">Jeff Hale Kaggle Kernel</a>을 참고할 것).</p><div><br><img src="https://cdn-images-1.medium.com/max/800/1*-oG0j_wGSW_9cNNs4_qgFQ.png"><br><span style="font-size:12px; text-align:center; display:block; color: #999;"><a href="https://towardsdatascience.com/the-most-in-demand-skills-for-data-scientists-4a4a8db896db" target="_blank" rel="noopener">출처 : The Most In Demand Skills For Data Scientists</a></span><br></div><p>원본 데이터를 통해서 확인해보면 LinkedIn을 제외한 다른 채용사이트들에서는 Analysis의 비중이 더 높았다. 그래서 전체를 Combine한 결과를 보여주는 위의 그래프에서는 Analysis가 가장 비중이 높은 것으로 보이는 것이다.</p><p>원문 저자가 얻은 Insight를 요약하자면,</p><ul><li>Machine Learning은 예측 시스템을 만드는 가장 핵심 기술이므로 가장 요구되는 기술.</li><li>Data Science는 통계 및 Computer Science기술이 필수.</li><li>Communication이 절반에 가까운 잡 포스팅에서 요구되고 있는 점.</li><li>AI, Deep Learning의 빈도수가 높지 않았으나, 이는 Machine Learning의 부분집합이므로 생긴 현상이다.</li><li>Deep Learning의 경우는 점점 더 사용되는 경우가 늘고 있다. 예를 들어 자연어 처리의 경우에도 가장 많이 사용되고 있는 알고리즘은 Deep Learning. <strong>미래에 Deep Learning 스킬이 훨씬 많은 곳에서 요구하게 될 것이며, Machine Learning은 즉 Deep Learning을 의미하게 될 것이라 본다.</strong></li></ul><p>다음으로는 회사가 원하는 <strong>Technology Skills</strong> 에 대해서 살펴보자.</p><div><br><img src="https://cdn-images-1.medium.com/max/800/1*jnZT4gFAzScOJ_VnYsni0g.png"><br><span style="font-size:12px; text-align:center; display:block; color: #999;"><a href="https://towardsdatascience.com/the-most-in-demand-skills-for-data-scientists-4a4a8db896db" target="_blank" rel="noopener">출처 : The Most In Demand Skills For Data Scientists</a></span><br></div><ol><li><strong>Python</strong><br>1위는 Python. 말이 필요 없다.</li><li><strong>R</strong><br>R은 Python과 비중에서 큰 격차를 보이진 않는데, 이는 R이 Python 이전에 Data Science의 필수 언어였기 때문이다. R의 최초 목적은 통계학을 위해서 시작되었고, 아직도 많은 통계학자들에게 사랑을 받는다.</li><li><strong>SQL</strong><br>SQL은 간혹 Data Science 세계에서 무시되는 경우도 있지만, 실제로는 많은 회사에서 요구되며 해당 스킬을 가지고 있으면 채용시장에서 당연히 훨씬 유리하다.</li><li><strong>Hadoop And Spark</strong><br>둘은 모두 Apache에서 제공되는 빅데이터를 위한 Open Source Tool이다.<br>이 두 가지 스킬은 Medium에서나 Tutorial 등이 눈에 띄게 적게 다뤄지고 있다. 지원자(취준) 중에도 앞서 설명한 기술들을 사용하지만 이 두 가지는 못하는 경우가 훨씬 많으므로, Hadoop과 Spark를 할 줄 안다면 채용시장에서 확실히 유리해질 것이다.</li><li><strong>Java and SAS</strong><br>저자는 이 두 가지 스킬이 이렇게 요구되는 사실에 놀랐다. 이 둘은 보통 Data Science 커뮤니티에서 그렇게 주목받고 있지는 않다.</li><li><strong>Tableau</strong><br>Tableau는 분석 플랫폼 및 시각화 도구이며, 사용법이 간편하다. 현재 무료 버젼이 있지만, 데이터를 Private하게 보관하려면 유료이다.</li></ol><p>저자는 만약 <strong>Tableau</strong> 을 사용한 경험이 없다면, Udemy의 <a href="https://www.udemy.com/tableau10/" target="_blank" rel="noopener">Tableau 강의</a> 를 추천했다.</p><p>아래 그래프는 2017년과 2018년을 비교한 것이다.</p><div><br><img src="https://cdn-images-1.medium.com/max/800/1*iueZKOOBidZtr-FTYyf6QA.png"><br><span style="font-size:12px; text-align:center; display:block; color: #999;"><a href="https://towardsdatascience.com/the-most-in-demand-skills-for-data-scientists-4a4a8db896db" target="_blank" rel="noopener">출처 : The Most In Demand Skills For Data Scientists</a></span><br></div><p>전체적으로 비슷하다. 하지만, <strong>R, Hadoop, Java, SAS and Matlab</strong> 의 요구도는 내려가고 있고, <strong>Tableau</strong> 는 확실히 올라가고 있다는 점은 주목할만하다.</p><h4 id="결론-추천-사항들"><a href="#결론-추천-사항들" class="headerlink" title="결론(추천 사항들)"></a>결론(추천 사항들)</h4><ul><li>데이터 분석은 기본, Machine Learning 기술을 높이는데 집중하자.</li><li>Communication 능력에 투자할 것. 추천 책으로는 <a href="https://www.amazon.com/Made-Stick-Ideas-Survive-Others/dp/1400064287" target="_blank" rel="noopener">Made to Stick</a>이 있고, <a href="http://www.hemingwayapp.com" target="_blank" rel="noopener">Hemmingway Editor</a>을 통해서 writing 능력도 키우자.</li><li>Deep Learning 프레임워크들을 마스터하자. Deep Learning 프레임워크을 능숙하게 사용할 수 있어야한다. 저자가 쓴 다른 <a href="https://towardsdatascience.com/deep-learning-framework-power-scores-2018-23607ddf297a" target="_blank" rel="noopener">블로그 글</a>도 참고할 것.</li><li>만약 R과 Python 중에 배울 언어를 고민 중이라면, Python을 선택할 것. 먼저 Python이 능숙하다면 R을 배우는 것을 고려해볼 것(채용시장에서 더 유리할 것이다).</li></ul><p>회사에서 Python을 사용하는 Data Scientist을 구한다는 것은 당연히 Data Science Libraries(<strong>numpy, pandas, scikit-learn, matplotlib 등</strong>)를 다루길 기대하는 것이다.</p><p>만약 Deep learning을 배우고자 한다면, <strong>Keras, FastAI</strong> 를 <strong>TensorFlow or PyTorch</strong> 이전에 시작할 것을 추천한다. Keras 공부를 위한 추천 책은 <a href="https://www.amazon.com/Deep-Learning-Python-Francois-Chollet/dp/1617294438" target="_blank" rel="noopener">Deep Learning with Python</a>이다.</p><p>끝으로 채용사이트는 <strong>LinkedIn</strong>을 추천한다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;요즘 글로벌 시장에서 &lt;strong&gt;Data Scientists&lt;/strong&gt; 부족으로 난리라고 한다.. 가장 요구되는 기술들이 무엇인지 분석한 기사가 있어서 번역을 통해서 소개하고자 한다 (자세한 내용은 아래의 링크를 통해서 원문을 확인하자
+      
+    
+    </summary>
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Data Science" scheme="https://databuzz-team.github.io/tags/Data-Science/"/>
+    
+      <category term="Tech News" scheme="https://databuzz-team.github.io/tags/Tech-News/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sohyun</title>
+    <link href="https://databuzz-team.github.io/2018/10/13/sohyun/"/>
+    <id>https://databuzz-team.github.io/2018/10/13/sohyun/</id>
+    <published>2018-10-13T07:18:26.000Z</published>
+    <updated>2018-10-17T03:45:31.168Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;
+      
+    
+    </summary>
+    
+      <category term="SoHyun Bae" scheme="https://databuzz-team.github.io/categories/SoHyun-Bae/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://databuzz-team.github.io/2018/10/13/test/"/>
+    <id>https://databuzz-team.github.io/2018/10/13/test/</id>
+    <published>2018-10-13T06:54:30.000Z</published>
+    <updated>2018-10-13T07:04:48.252Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;
+      
+    
+    </summary>
+    
+      <category term="HanJin Hwang" scheme="https://databuzz-team.github.io/categories/HanJin-Hwang/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test yoon</title>
+    <link href="https://databuzz-team.github.io/2018/10/13/post/"/>
+    <id>https://databuzz-team.github.io/2018/10/13/post/</id>
+    <published>2018-10-13T05:34:56.000Z</published>
+    <updated>2018-10-13T05:49:58.514Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><p>test</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;&lt;p&gt;test&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="HyunGeun Yoon" scheme="https://databuzz-team.github.io/categories/HyunGeun-Yoon/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hyeshin_first</title>
+    <link href="https://databuzz-team.github.io/2018/10/13/hyeshin-first/"/>
+    <id>https://databuzz-team.github.io/2018/10/13/hyeshin-first/</id>
+    <published>2018-10-13T05:30:55.000Z</published>
+    <updated>2018-10-13T05:44:03.635Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><p>first posting</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;&lt;p&gt;first posting&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="HyeShin Oh" scheme="https://databuzz-team.github.io/categories/HyeShin-Oh/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test2</title>
+    <link href="https://databuzz-team.github.io/2018/10/11/test2/"/>
+    <id>https://databuzz-team.github.io/2018/10/11/test2/</id>
+    <published>2018-10-11T11:55:06.000Z</published>
+    <updated>2018-10-12T01:30:36.001Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;
+      
+    
+    </summary>
+    
+      <category term="Haley Jang" scheme="https://databuzz-team.github.io/categories/Haley-Jang/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://databuzz-team.github.io/2018/10/10/test/"/>
+    <id>https://databuzz-team.github.io/2018/10/10/test/</id>
+    <published>2018-10-10T10:14:21.000Z</published>
+    <updated>2018-10-11T01:03:23.621Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Related-Posts&quot;&gt;&lt;a href=&quot;#Related-Posts&quot; class=&quot;headerlink&quot; title=&quot;Related Posts&quot;&gt;&lt;/a&gt;Related Posts&lt;/h3&gt;
+      
+    
+    </summary>
+    
+      <category term="Derrick Kim" scheme="https://databuzz-team.github.io/categories/Derrick-Kim/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;DataBuzz&gt; 블로그 작성법 및 주의사항</title>
+    <link href="https://databuzz-team.github.io/2018/10/10/How-To-Use/"/>
+    <id>https://databuzz-team.github.io/2018/10/10/How-To-Use/</id>
+    <published>2018-10-10T09:04:34.000Z</published>
+    <updated>2018-10-13T07:04:42.780Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Hexo-Scaffolds란"><a href="#Hexo-Scaffolds란" class="headerlink" title="Hexo Scaffolds란?"></a>Hexo Scaffolds란?</h3><p>hexo new -[page/post/draft 등] 을 실행했을 때 Default로 들어갈 정보를 입력하는 공간이다.</p><h3 id="1-Scaffolds-post-md-파일-수정하기"><a href="#1-Scaffolds-post-md-파일-수정하기" class="headerlink" title="1. Scaffolds/post.md 파일 수정하기"></a>1. Scaffolds/post.md 파일 수정하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /scaffolds/post.md</span></span><br><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">  - <span class="string">"Danial Nam"</span> &lt;- 이 부분을 자신의 이름으로 변경한다.</span><br><span class="line">tags:</span><br><span class="line">  -</span><br><span class="line">thumbnail:</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h3 id="2-New-post-추가하기"><a href="#2-New-post-추가하기" class="headerlink" title="2. New post 추가하기"></a>2. New post 추가하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"제목"</span></span><br></pre></td></tr></table></figure><h3 id="3-Title"><a href="#3-Title" class="headerlink" title="3. Title"></a>3. Title</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Title에는 []를 사용할 경우 오류가난다.</span><br><span class="line">필요시에는 &lt;&gt;로 대체할 것.</span><br></pre></td></tr></table></figure><h3 id="4-Tags"><a href="#4-Tags" class="headerlink" title="4. Tags"></a>4. Tags</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">깔끔한 블로그 관리를 위하여 Tag는 영어 Full Name으로 표기하며,</span><br><span class="line">파스칼케이스를 사용한다.</span><br><span class="line"></span><br><span class="line"><span class="comment"># Depth 및 Indent에 주의할 것!</span></span><br><span class="line">tags:</span><br><span class="line">  - Artificial Intelligence</span><br><span class="line">  - Data Science</span><br><span class="line">  -</span><br><span class="line"></span><br><span class="line">예)</span><br><span class="line">  AI -&gt; Artificial Intelligence</span><br><span class="line">  Data science -&gt; Data Science</span><br></pre></td></tr></table></figure><h3 id="5-Deploy-중요함"><a href="#5-Deploy-중요함" class="headerlink" title="5. Deploy(중요함!!)"></a>5. Deploy(중요함!!)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh post.sh</span><br><span class="line"><span class="comment"># 반드시 위의 명령을 실행하여 업로드한다!</span></span><br><span class="line"><span class="comment"># hexo g -d 명령을 사용해서 업로드해서는 안된다!!</span></span><br></pre></td></tr></table></figure><p>마지막에 Git pull해라는 오류가 뜨면, Pull을 실행하고 다시 sh post.sh로 재업로드해줄것!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Hexo-Scaffolds란&quot;&gt;&lt;a href=&quot;#Hexo-Scaffolds란&quot; class=&quot;headerlink&quot; title=&quot;Hexo Scaffolds란?&quot;&gt;&lt;/a&gt;Hexo Scaffolds란?&lt;/h3&gt;&lt;p&gt;hexo new -[page/
+      
+    
+    </summary>
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Data Science" scheme="https://databuzz-team.github.io/tags/Data-Science/"/>
+    
+  </entry>
+  
+</feed>
