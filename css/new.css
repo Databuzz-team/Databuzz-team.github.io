@@ -53,6 +53,15 @@ blockquote{
   color: #999;
 }
 
+.nav-icon{
+  color: #999;
+  margin-right:5px;
+}
+
+.nav-current{
+  color: #333;
+}
+
 .page-top .nav a.current{
   /* color: #00a178; */
   color: #333;
@@ -196,20 +205,20 @@ blockquote{
 
 .listing-post{
   margin-top: 10px;
-  height: 60px;
+  /* height: 60px; */
   position: relative;
   border-bottom: 1px solid #f2f2f2;
 }
 
 .listing-tag-div{
-  position: absolute;
+  /* position: absolute;
   bottom: 10px;
-  left: 56px;
+  left: 56px; */
 }
 
 .post-time{
-  position: absolute;
-  bottom: 10px;
+  /* position: absolute;
+  bottom: 10px; */
 }
 
 .listing-tag{
