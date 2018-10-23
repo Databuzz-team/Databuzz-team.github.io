@@ -3,29 +3,50 @@
 
 
     <url>
+        <loc>https://databuzz-team.github.io/tags/Git/</loc>
+        <lastmod>2018-10-23T03:36:33.206Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://databuzz-team.github.io/tags/Data-Science/</loc>
-        <lastmod>2018-10-17T03:53:25.359Z</lastmod>
+        <lastmod>2018-10-23T03:36:47.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://databuzz-team.github.io/tags/Tech-News/</loc>
-        <lastmod>2018-10-17T03:53:25.359Z</lastmod>
+        <lastmod>2018-10-23T03:36:47.339Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://databuzz-team.github.io/tags/Machine-Learning/</loc>
-        <lastmod>2018-10-21T13:01:16.228Z</lastmod>
+        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/tags/Git/</loc>
-        <lastmod>2018-10-21T13:39:04.588Z</lastmod>
+        <loc>https://databuzz-team.github.io/tags/Artificial-Intelligence/</loc>
+        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Deep-Learning/</loc>
+        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Tensorflow/</loc>
+        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

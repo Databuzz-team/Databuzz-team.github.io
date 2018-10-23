@@ -4,7 +4,7 @@
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-127200932-1');
-</script></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog</p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Machine Learning </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/tags-and-authors">Tags &amp; Authors</a></li><li><a href="/about-us">About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;Machine Learning&gt; 비대칭 데이터 문제는 어떻게 해결해야 하나?</a></h3></div><div class="post-content post-detail"><p><br></p>
+</script></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog</p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Machine Learning </li><li class="featured-tags-li tag-li-detail"> Artificial Intelligence </li><li class="featured-tags-li tag-li-detail"> Deep Learning </li><li class="featured-tags-li tag-li-detail"> Tensorflow </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/tags-and-authors">Tags &amp; Authors</a></li><li><a href="/about-us">About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;Machine Learning&gt; 비대칭 데이터 문제는 어떻게 해결해야 하나?</a></h3></div><div class="post-content post-detail"><p><br></p>
 <blockquote>
 <p><a href="https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/" target="_blank" rel="noopener">참고 블로그(8 Tactics to Combat Imbalanced Classes in Your Machine Learning Dataset) 링크</a><br><a href="https://machinelearningmastery.com/" target="_blank" rel="noopener">블로거 링크</a></p>
 </blockquote>
@@ -14,9 +14,9 @@ gtag('config', 'UA-127200932-1');
 <p>간단한 예를 들자면, 100개의 과일 사진 중에 사과 사진이 90개, 귤 사진이 10개인 경우다.</p>
 <p>이 경우라면 100개 중에 랜덤하게 뽑은 사진이 무슨 사진인지 맞춰야 한다면 사과라고 말하는 것이 가장 합리적일 것이다. 이것이 비대칭 데이터에서 일어나는 가장 큰 문제점이다.</p>
 <hr>
-<p>이제 비대칭 문제에 대해서는 이해했을 것이다. 이제 문제를 해결하기 위해 취해야 할 전략(서두에서 링크한 블로그에서 소개한 8가지 전략)을 알아보자.</p>
-<h2 id="1-데이터를-더-모을-수-있나"><a href="#1-데이터를-더-모을-수-있나" class="headerlink" title="1. 데이터를 더 모을 수 있나?"></a>1. 데이터를 더 모을 수 있나?</h2><p>너무 당연한 질문! 더 많은 데이터는 당연히 조금은 더 클래스 대칭적인 결과를 제공할 것이므로..</p>
-<h2 id="2-평가-기준을-바꿔보자"><a href="#2-평가-기준을-바꿔보자" class="headerlink" title="2. 평가 기준을 바꿔보자."></a>2. 평가 기준을 바꿔보자.</h2><p><strong>Accuracy</strong> 는 비대칭 문제에서는 사용하면 안되는 평가 기준이다(<a href="https://en.wikipedia.org/wiki/Accuracy_paradox" target="_blank" rel="noopener">Accuracy Paradox</a>를 참고하자).</p>
+<h3 id="비대칭-데이터-문제를-다루는-8가지-전략"><a href="#비대칭-데이터-문제를-다루는-8가지-전략" class="headerlink" title="비대칭 데이터 문제를 다루는 8가지 전략"></a>비대칭 데이터 문제를 다루는 8가지 전략</h3><p>이제 비대칭 문제에 대해서는 이해했을 것이다. 이제 문제를 해결하기 위해 취해야 할 전략(서두에서 링크한 블로그에서 소개한 8가지 전략)을 알아보자.</p>
+<h3 id="1-데이터를-더-모을-수-있나"><a href="#1-데이터를-더-모을-수-있나" class="headerlink" title="1. 데이터를 더 모을 수 있나?"></a>1. 데이터를 더 모을 수 있나?</h3><p>너무 당연한 질문! 더 많은 데이터는 당연히 조금은 더 클래스 대칭적인 결과를 제공할 것이므로..</p>
+<h3 id="2-평가-기준을-바꿔보자"><a href="#2-평가-기준을-바꿔보자" class="headerlink" title="2. 평가 기준을 바꿔보자."></a>2. 평가 기준을 바꿔보자.</h3><p><strong>Accuracy</strong> 는 비대칭 문제에서는 사용하면 안되는 평가 기준이다(<a href="https://en.wikipedia.org/wiki/Accuracy_paradox" target="_blank" rel="noopener">Accuracy Paradox</a>를 참고하자).</p>
 <p>원문 저자는 자신의 포스트 <a href="https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/" target="_blank" rel="noopener">Classification Accuracy is Not Enough: More Performance Measures You Can Use</a> 에서 소개한 평가기준들을 추천했다.</p>
 <ul>
 <li>Confusion Matrix:<br>예측 결과를 테이블 형태로 보여준다.</li>
@@ -29,7 +29,7 @@ gtag('config', 'UA-127200932-1');
 <li>Kappa(or Cohen’s kappa)<br>Accuracy를 정규화한 값으로 보여준다.</li>
 <li>ROC Curves<br>ROC(Receiver Operator Characteristic) 커브는 클래스 판별 기준값의 변화에 따른 위양성률(fall-out)과 재현율(recall)의 변화를 시각화한 것이다.</li>
 </ul>
-<h2 id="3-데이터셋을-Re-샘플링하자"><a href="#3-데이터셋을-Re-샘플링하자" class="headerlink" title="3. 데이터셋을 Re-샘플링하자."></a>3. 데이터셋을 Re-샘플링하자.</h2><p>데이터 셋을 변형시켜서 전체 클래스의 분포를 균일하게 만드는 방법으로 두 가지 방법이 있다.</p>
+<h3 id="3-데이터셋을-Re-샘플링하자"><a href="#3-데이터셋을-Re-샘플링하자" class="headerlink" title="3. 데이터셋을 Re-샘플링하자."></a>3. 데이터셋을 Re-샘플링하자.</h3><p>데이터 셋을 변형시켜서 전체 클래스의 분포를 균일하게 만드는 방법으로 두 가지 방법이 있다.</p>
 <ol>
 <li>Over-sampling</li>
 <li>Under-sampling</li>
@@ -37,19 +37,19 @@ gtag('config', 'UA-127200932-1');
 <p>둘 다 사용해보는 것을 추천한다.</p>
 <p><a href="https://datascienceschool.net/view-notebook/c1a8dad913f74811ae8eef5d3bedc0c3/" target="_blank" rel="noopener">비대칭 데이터 문제</a> &lt;- 이 링크에서 다양한 샘플링 방법을 시각화해서 설명한 자료들이 있으니 확인하자.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 다양한 샘플링 방법을 구현한 파이썬 패키지이다.</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$pip</span> install -U imbalanced-learn</span><br></pre></td></tr></table></figure>
-<h2 id="4-가짜-데이터-샘플을-만들자"><a href="#4-가짜-데이터-샘플을-만들자" class="headerlink" title="4. 가짜 데이터 샘플을 만들자."></a>4. 가짜 데이터 샘플을 만들자.</h2><p>Over sampling의 기법은 가짜 데이터를 더 생성하는 것이니 위의 방법을 좀 더 발전시킨 전략이라고 보면 되겠다.</p>
+<h3 id="4-가짜-데이터-샘플을-만들자"><a href="#4-가짜-데이터-샘플을-만들자" class="headerlink" title="4. 가짜 데이터 샘플을 만들자."></a>4. 가짜 데이터 샘플을 만들자.</h3><p>Over sampling의 기법은 가짜 데이터를 더 생성하는 것이니 위의 방법을 좀 더 발전시킨 전략이라고 보면 되겠다.</p>
 <p><strong>Naive Bayes</strong> 알고리즘을 사용할 경우에는 생성도 가능하니 이를 이용하거나, 가장 인기있는 방법인 <strong>SMOTE(Synthetic Minority Over-sampling Technique)</strong> 를 사용하는 것을 추천한다.</p>
 <p>SMOTE는 부족한 클래스의 모조 샘플을 만들어내는 것이다. 이 알고리즘은 2개 이상의 비슷한 객체들을 선택하여 거리를 재고 사이사이 새로운 데이터를 생성해나간다.</p>
 <p>자세한 정보는 <a href="http://www.jair.org/papers/paper953.html" target="_blank" rel="noopener">링크</a>를 확인하자.</p>
-<h2 id="5-다른-Algorithms을-사용해보자"><a href="#5-다른-Algorithms을-사용해보자" class="headerlink" title="5. 다른 Algorithms을 사용해보자."></a>5. 다른 Algorithms을 사용해보자.</h2><p>언제나 그렇듯, 자신이 가장 좋아하는 알고리즘을 모든 문제에 사용하지 않는 것을 추천한다.</p>
+<h3 id="5-다른-Algorithms을-사용해보자"><a href="#5-다른-Algorithms을-사용해보자" class="headerlink" title="5. 다른 Algorithms을 사용해보자."></a>5. 다른 Algorithms을 사용해보자.</h3><p>언제나 그렇듯, 자신이 가장 좋아하는 알고리즘을 모든 문제에 사용하지 않는 것을 추천한다.</p>
 <p><strong>의사 결정 나무(Decision Tree)</strong> 는 비대칭 문제에서 성능이 좋은 경우가 많다.</p>
 <p>C4.5, C5.0, CART and Random Forest 등 다양하게 사용해보는 것을 추천.</p>
-<h2 id="6-모델에-제한을-준다"><a href="#6-모델에-제한을-준다" class="headerlink" title="6. 모델에 제한을 준다."></a>6. 모델에 제한을 준다.</h2><p><strong>Penalized classification(패널티가 있는 분류)</strong> 는 함수를 설정하여 부족한 클래스를 분류하는 것에 오류가 일어나게 만드는 것을 의미한다. 제한사항으로 설정한 함수(패널티 함수)는 부족한 클래스를 분류하는 것에 좀 더 집중을 할 수 있게 한다.</p>
+<h3 id="6-모델에-제한을-준다"><a href="#6-모델에-제한을-준다" class="headerlink" title="6. 모델에 제한을 준다."></a>6. 모델에 제한을 준다.</h3><p><strong>Penalized classification(패널티가 있는 분류)</strong> 는 함수를 설정하여 부족한 클래스를 분류하는 것에 오류가 일어나게 만드는 것을 의미한다. 제한사항으로 설정한 함수(패널티 함수)는 부족한 클래스를 분류하는 것에 좀 더 집중을 할 수 있게 한다.</p>
 <blockquote>
 <p>penalized-SVM, penalized-LDA 등 penalized 된 버젼들이 존재한다.<br>그뿐만아니라, 패널라이즈드 모델들을 위해 Framework도 존재하는데, 예를들어 Weka의 <a href="http://weka.sourceforge.net/doc.dev/weka/classifiers/meta/CostSensitiveClassifier.html#CostSensitiveClassifier--" target="_blank" rel="noopener">CostSensitiveClassifier</a>가 있다.</p>
 </blockquote>
 <p>패널티 매트릭스를 만드는 것은 매우 복잡하여, 특정 알고리즘을 써야 하거나 Re-샘플링이 불가능한 경우에 사용하는 것이 좋다.</p>
-<h2 id="7-다른-관점으로-시도하자"><a href="#7-다른-관점으로-시도하자" class="headerlink" title="7. 다른 관점으로 시도하자."></a>7. 다른 관점으로 시도하자.</h2><p>추천하는 방법으로는 <strong>Anomaly Detection</strong>, <strong>Change Detection</strong> 가 있다.</p>
+<h3 id="7-다른-관점으로-시도하자"><a href="#7-다른-관점으로-시도하자" class="headerlink" title="7. 다른 관점으로 시도하자."></a>7. 다른 관점으로 시도하자.</h3><p>추천하는 방법으로는 <strong>Anomaly Detection</strong>, <strong>Change Detection</strong> 가 있다.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Anomaly_detection" target="_blank" rel="noopener">Anomaly Detection</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Change_detection" target="_blank" rel="noopener">Change Detection</a></li>
