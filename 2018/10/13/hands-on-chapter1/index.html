@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Databuzz, Databuzz.team@gmail.com"><title><MACHINE LEARNING> CHAPTER1. 한눈에 보는 머신 러닝 · Databuzz's Tech Blog</title><meta name="description" content="Hands-On Machine Learning with Scikit-Learn &amp;amp; TensorFlow 책을 읽고 공부하면서 내용을 요약하고 정리한 것입니다.
+1.1 머신 러닝이란?
+어떤 작업 T에 대한 컴퓨터 프로그램의 성능을 P로 측정했을 때 경험E로 인해 성"><meta name="keywords" content="DataScience"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/top-image.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/new.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Stylish|Boogaloo"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127200932-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-127200932-1');
+</script></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog</p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Hexo </li><li class="featured-tags-li tag-li-detail"> Mathjax </li><li class="featured-tags-li tag-li-detail"> Machine Learning </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Artificial Intelligence </li><li class="featured-tags-li tag-li-detail"> Deep Learning </li><li class="featured-tags-li tag-li-detail"> Tensorflow </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/"><i class="fas fa-home nav-icon"></i>Home</a></li><li><a href="/tags-and-authors"><i class="fas fa-user-tag nav-icon"></i>Tags & Authors</a></li><li><a href="/about-us"><i class="fas fa-building nav-icon"></i>About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;MACHINE LEARNING&gt; CHAPTER1. 한눈에 보는 머신 러닝</a></h3></div><div class="post-content post-detail"><p>Hands-On Machine Learning with Scikit-Learn &amp; TensorFlow 책을 읽고 공부하면서 내용을 요약하고 정리한 것입니다.<br><a id="more"></a></p>
+<h3 id="1-1-머신-러닝이란"><a href="#1-1-머신-러닝이란" class="headerlink" title="1.1 머신 러닝이란?"></a>1.1 머신 러닝이란?</h3><blockquote>
+<p>어떤 작업 T에 대한 컴퓨터 프로그램의 성능을 P로 측정했을 때 경험E로 인해 성능이 향상됐다면, 이 컴퓨터 프로그램은 작업 T와 성능 측정 P에 대해 경험 E로 학습한 것이다.</p>
+<pre><code>                                     - 톰 미첼(Tom Mitchell, 1997)
+</code></pre></blockquote>
+<p>위키백과 문서를 모두 내려받는 것 -&gt; 많은 데이터를 갖게 되는 것 : 머신 러닝 X</p>
+<h3 id="1-2-왜-머신-러닝을-사용하는가"><a href="#1-2-왜-머신-러닝을-사용하는가" class="headerlink" title="1.2 왜 머신 러닝을 사용하는가?"></a>1.2 왜 머신 러닝을 사용하는가?</h3><ul>
+<li>기존 솔루션으로는 많은 수동 조정과 규칙이 필요한 문제 : 하나의 머신러닝 모델이 코드를 간단하고 더 잘 수행되도록 할 수 있습니다.</li>
+<li>전통적인 방식으로는 전혀 해결 방법이 없는 복잡한 문제 : 가장 뛰어난 머신러닝 기법으로 해결 방법을 찾을 수 있습니다.</li>
+<li>유동적인 환경 : 머신러닝 시스템은 새로운 데이터에 적응할 수 있습니다.</li>
+<li>복잡한 문제와 대량의 데이터에서 통찰 얻기</li>
+</ul>
+<h3 id="1-3-머신러닝-시스템의-종류"><a href="#1-3-머신러닝-시스템의-종류" class="headerlink" title="1.3 머신러닝 시스템의 종류"></a>1.3 머신러닝 시스템의 종류</h3><ul>
+<li>사람의 감독 하에 훈련하는 것인지 그렇지 않은 것인지(지도, 비지도, 준지도, 강화 학습)</li>
+<li>실시간으로 점진적인 학습을 하는지 아닌지(온라인 학습과 배치 학습)</li>
+<li>단순하게 알고 있는 데이터 포인트와 새 데이터 포인트를 비교하는 것인지 아니면 훈련 데이터셋에서 과학자들처럼 패턴을 발견하여 예측 모델을 만드는지(사례 기반 학습과 모델 기반 학습)</li>
+</ul>
+<p>-&gt; 서로 배타적이지 않으며 연결 가능</p>
+<h4 id="1-3-1-지도-학습과-비지도-학습"><a href="#1-3-1-지도-학습과-비지도-학습" class="headerlink" title="1.3.1  지도 학습과 비지도 학습"></a>1.3.1  지도 학습과 비지도 학습</h4><p>학습하는 동안의 감독 형태나 정보량’에 따라 분류</p>
+<h4 id="지도학습-supervised-learning"><a href="#지도학습-supervised-learning" class="headerlink" title="지도학습(supervised learning)"></a>지도학습(supervised learning)</h4><p>-&gt; 훈련데이터에 레이블 포함</p>
+<ul>
+<li>회귀(regression) : <strong>예측 변수</strong><sup>predictor variable</sup>라 부르는 <strong>특성</strong><sup>featrue</sup>(주행거리, 연식, 브랜드 등)을 사용해 중고차 가격 같은 <strong>타깃</strong> 수치를 예측하는 것</li>
+<li>분류 (Classification) : 전형적 지도 학습</li>
+</ul>
+<p>가장 중요한 지도 학습 알고리즘</p>
+<ul>
+<li>k-최근접 이웃 <sup> k-Nearest Neighbors</sup></li>
+<li>선형 회귀 <sup>Linear Regression</sup></li>
+<li>로지스틱 회귀 <sup>Logistic Regression</sup></li>
+<li>서포트 벡터 머신 <sup>Support Vector Machines(SVM)</sup></li>
+<li>결정 트리 <sup>Decision Tree</sup>와 랜덤 포레스트 <sup>Random Forests</sup></li>
+<li>신경망 <sup>Neural networks</sup></li>
+</ul>
+<h4 id="비지도-학습-unsupervised-learning"><a href="#비지도-학습-unsupervised-learning" class="headerlink" title="비지도 학습(unsupervised learning)"></a>비지도 학습(unsupervised learning)</h4><p>-&gt; 훈련데이터에 레이블 미포함</p>
+<p>가장 중요한 비지도 학습 알고리즘</p>
+<ul>
+<li>군집 <sup>clustering</sup><ul>
+<li>k-평균<sup>k-Means</sup></li>
+<li>계층 군집 분석<sup>Hierarchical Cluster Analysis</sup>(HCA)</li>
+<li>기댓값 최대화<sup>Expectation Maximization</sup></li>
+</ul>
+</li>
+<li>시각화<sup>visualization</sup>와 차원 축소<sup>dimensionality reduction</sup><ul>
+<li>주성분 분석<sup>Principal Component Analysis</sup>(PCA)</li>
+<li>커널<sup>kernel</sup>PCA</li>
+<li>지역적 선형 임베딩<sup>Locally-Linear Embedding</sup>(LLE)</li>
+<li>t-SNE<sup>t-distributed Stochastic Neighbor Embedding</sup></li>
+</ul>
+</li>
+<li>연관 규칙 학습<sup>Assiociation rule learning</sup><ul>
+<li>어프라이어리<sup>Apriori</sup></li>
+<li>이클렛<sup>Eclat</sup></li>
+</ul>
+</li>
+</ul>
+<p>시각화<sup>visualization</sup>알고리즘 : 도식화 가능한 2D나 3D 표현 , 가능한 구조 유지<br>차원 축소<sup>dimensionality reduction</sup> : 상관관계가 있는 여러 특성을 하나로 합치는 것  ex) 주행거리, 연식 -&gt; 차의 마모 (<strong>특성 추출</strong>)<br>이상치 탐지<sup>anomaly detection</sup> : 학습 알고리즘 주입 전 데이터셋에 이상한 값을 자동으로 제거<br>연관 규칙 학습<sup>association rule learning</sup> : 대량의 데이터에서 특성 간의 흥미로운 관계</p>
+<h4 id="준지도-학습semisupervised-learning"><a href="#준지도-학습semisupervised-learning" class="headerlink" title="준지도 학습semisupervised learning"></a>준지도 학습<sup>semisupervised learning</sup></h4><p>레이블이 일부만 존재</p>
+<h4 id="강화-학습Reinforcement-Learning"><a href="#강화-학습Reinforcement-Learning" class="headerlink" title="강화 학습Reinforcement Learning"></a>강화 학습<sup>Reinforcement Learning</sup></h4><p>학습하는 시스템을 <strong>에이전트</strong>, 환경을 관찰해서 행동을 실행하고 보상 또는 벌점을 받습니다. 가장 큰 보상을 얻기 위해 <strong>정책</strong><sup>policdy</sup>이라 부르는최상 전략을 스스로 학습합니다.</p>
+<h4 id="1-3-2-배치-학습과-온라인-학습"><a href="#1-3-2-배치-학습과-온라인-학습" class="headerlink" title="1.3.2 배치 학습과 온라인 학습"></a>1.3.2 배치 학습과 온라인 학습</h4><p>입력 데이터의 스트림<sup>stream</sup>으로부터 점진적으로 학습할 수 있는 여부</p>
+<p><strong>배치 학습</strong><sup>batch learning</sup></p>
+<ul>
+<li>가용한 데이터를 모두 사용해 훈련</li>
+<li>제품 시스템에 적용하면 더 이상의 학습없이 실행</li>
+<li>많은 컴퓨팅 자원 필요(CPU, 메모리 공간, 디스크 공간, 디스크 IO, 네트워크 IO 등)</li>
+<li>자원이 제한된 시스템(예 - 스마트폰, 화성 탐사 로버)이 스스로 학습해야 할 때 많은 자원 사용하면 심각한 문제</li>
+</ul>
+<p><strong>온라인 학습</strong><sup>online learning</sup></p>
+<ul>
+<li>데이터를 순차적으로 한 개씩 또는 미니배치<sup>mini-batch</sup>라 부르는 작은 묶음 단위로 주입</li>
+<li>빠른 변화에 스스로 적응해야하는 시스템에 적합, 컴퓨팅 자원이 제한된 경우</li>
+<li>메인 메모리에 들어갈 수 없는 아주 큰 데이터셋을 학습하는 시스템(<strong>외부 메모리</strong><sup>out-of-core</sup> 학습)</li>
+<li>전체 프로세스는 보통 오프라인, 따라서 <strong>점진적 학습</strong><sup>incremental learning</sup>으로 생각</li>
+<li><strong>학습률</strong><sup>learning rate</sup> : 변화는 데이터에 얼마나 빠르게 적응할 것</li>
+</ul>
+<h4 id="1-3-3-사례-기반-학습과-모델-기반-학습"><a href="#1-3-3-사례-기반-학습과-모델-기반-학습" class="headerlink" title="1.3.3 사례 기반 학습과 모델 기반 학습"></a>1.3.3 사례 기반 학습과 모델 기반 학습</h4><p>어떻게 <strong>일반화</strong>되는가에 따라 분류</p>
+<p><strong>사례 기반 학습</strong><sup>instance-based learning</sup></p>
+<ul>
+<li><strong>유사도</strong><sup>similarity</sup>를 측정하여 새로운 데이터를 일반화</li>
+</ul>
+<p><strong>모델 기반 학습</strong><sup>model-based learning</sup></p>
+<ul>
+<li>모델을 만들어 <strong>예측</strong>에 사용<ul>
+<li>데이터를 분석</li>
+<li>모델 선택</li>
+<li>훈련 데이터로 모델 훈련(비용 함수<sup>cost function</sup> 최소화 하는 모델 파라미터 탐색)</li>
+<li>새로운 데이터에 모델을 적용해 예측, 잘 일반화되길 기대</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-머신러닝의-주요-도전-과제"><a href="#1-4-머신러닝의-주요-도전-과제" class="headerlink" title="1.4 머신러닝의 주요 도전 과제"></a>1.4 머신러닝의 주요 도전 과제</h3><p>문제점</p>
+<ol>
+<li>나쁜 알고리즘</li>
+<li>나쁜 데이터</li>
+</ol>
+<h4 id="1-4-1-충분하지-않은-양의-훈련-데이터"><a href="#1-4-1-충분하지-않은-양의-훈련-데이터" class="headerlink" title="1.4.1 충분하지 않은 양의 훈련 데이터"></a>1.4.1 충분하지 않은 양의 훈련 데이터</h4><h4 id="1-4-2-대표성-없는-훈련-데이터"><a href="#1-4-2-대표성-없는-훈련-데이터" class="headerlink" title="1.4.2 대표성 없는 훈련 데이터"></a>1.4.2 대표성 없는 훈련 데이터</h4><ul>
+<li>샘플이 작으면 <strong>샘플링 잡음</strong><sup>sampling noise</sup>(즉, 우연에 의한 대표성 없는 데이터)</li>
+<li>샘플이 큰 경우도 추출 방법이 잘못된 경우 <strong>샘플링 편향</strong><sup>sampling bias</sup></li>
+</ul>
+<h4 id="1-4-3-낮은-품질의-데이터"><a href="#1-4-3-낮은-품질의-데이터" class="headerlink" title="1.4.3 낮은 품질의 데이터"></a>1.4.3 낮은 품질의 데이터</h4><ul>
+<li>에러, 이상치<sup>outlier</sup>, 잡음</li>
+<li>이상치가 명확하면 무시하거나 수동으로 잘못된 것을 고침</li>
+<li>일부 특성 중 데이터가 누락된 경우 특성을 무시할지, 샘플을 무시할지, 빠진값을 채울지, 특성을 넣은 모델과 제외한 모델을 따로 훈련 시킬것인지 결정</li>
+</ul>
+<h4 id="1-4-4-관련-없는-특성"><a href="#1-4-4-관련-없는-특성" class="headerlink" title="1.4.4 관련 없는 특성"></a>1.4.4 관련 없는 특성</h4><ul>
+<li><strong>특성 공학</strong><sup>feature engineering</sup> : 훈련에 사용할 좋은 특성들을 찾는 것<ul>
+<li><strong>특성 선택</strong><sup>feature selection</sup> : 가지고 있는 특성 중에서 훈련에 가장 유용한 특성을 선택</li>
+<li><strong>특성 추출</strong><sup>feature extraction</sup> : 특성을 결합하여 더 유용한 특성을 만듬(차원 축소 알고리즘)</li>
+<li>새 특성을 만듬</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-5-훈련-데이터-과대적합"><a href="#1-4-5-훈련-데이터-과대적합" class="headerlink" title="1.4.5 훈련 데이터 과대적합"></a>1.4.5 훈련 데이터 과대적합</h4><ul>
+<li><strong>과대적합</strong><sup>overfitting</sup> : 모델이 훈련 데이터에 너무 잘 맞지만 일반성이 떨어짐<ul>
+<li>훈련 데이터에 있는 잡음의 양에 비해 모델이 너무 복잡할 때 발생</li>
+<li>파라미터 수가 적은 모델 선택, 훈련데이터에 특성수를 줄임, 모델에 제약을 가하여 단순화(<strong>하이퍼파라미터</strong><sup>hyperparameter</sup> : 학습하는 동안 적용할 규제의 양, 학습 알고리즘의 파라미터)</li>
+<li>훈련 데이터를 더 많이 모음</li>
+<li>훈련 데이터의 잡음을 줄임</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-6-훈련-데이터-과소적합"><a href="#1-4-6-훈련-데이터-과소적합" class="headerlink" title="1.4.6 훈련 데이터 과소적합"></a>1.4.6 훈련 데이터 과소적합</h4><ul>
+<li><strong>과소적합</strong><sup>underfitting</sup> : 모델이 너무 단순해서 데이터의 내재된 구조를 학습하지 못할 때<ul>
+<li>파라미터가 더 많은 강력한 모델 선택</li>
+<li>더 좋은 특성 제공(특성 엔지니어링)</li>
+<li>모델의 제약을 줄임( 규제 하이퍼파라미터를 감소)</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-테스트와-검증"><a href="#1-5-테스트와-검증" class="headerlink" title="1.5 테스트와 검증"></a>1.5 테스트와 검증</h3><ul>
+<li><strong>훈련 세트</strong> 와 <strong>테스트 세트</strong> 로 나누어 훈련<ul>
+<li><strong>일반화 오차</strong><sup>generalization error</sup>(<strong>외부 샘플 오차</strong><sup>out-of-sample erro</sup>) : 새로운 샘플에 대한 오류 비율</li>
+<li>훈련 오차가 낮지만 일반화 오차가 높다면 과대 적합</li>
+</ul>
+</li>
+<li><strong>검증 세트</strong><sup>validation set</sup><ul>
+<li><strong>교차 검증</strong><sup>cross-validation</sup> 기법</li>
+</ul>
+</li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date tag-not-hover">2018-10-13</span><i class="fa fa-comment-o"></i><a href="/2018/10/13/hands-on-chapter1/#comments">Comments</a><!-- i.fas.fa-pencil-alt--><!-- a.tag(href=config.root + item.path, title= item.name)!= "Written by " + '<img class="post-footer-author" src="/images/avatar/' + png_name + '.png"> ' + item.name + " "--><a class="tag tag-not-hover">Written by <img class="post-footer-author" src="/images/avatar/hyungeun-yoon.png"> HyunGeun Yoon </a><br><i class="fa fa-tag"></i><!-- a.tag(href=config.root + item.path, title= item.name)= "#" + item.name + " "--><a class="tag tag-not-hover">#Machine Learning </a></div></div></div></div><div class="share"></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/10/13/test/" title="test">Previous post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2018/10/13/hexo-mathjax/" title="&lt;Hexo&gt; 블로그에 수식 사용하기 - mathjax 설정">Next post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'Databuzz';
+var disqus_identifier = '2018/10/13/hands-on-chapter1/';
+var disqus_title = '&lt;MACHINE LEARNING&gt; CHAPTER1. 한눈에 보는 머신 러닝';
+var disqus_url = 'https://databuzz-team.github.io/2018/10/13/hands-on-chapter1/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div></body></html>

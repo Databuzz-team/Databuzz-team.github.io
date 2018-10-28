@@ -22,20 +22,6 @@
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/categories/HyeShin-Oh/</loc>
-        <lastmod>2018-10-13T05:44:03.635Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/categories/HyunGeun-Yoon/</loc>
-        <lastmod>2018-10-13T05:49:58.514Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://databuzz-team.github.io/categories/HanJin-Hwang/</loc>
         <lastmod>2018-10-13T07:04:48.252Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,7 +37,21 @@
 
     <url>
         <loc>https://databuzz-team.github.io/categories/Danial-Nam/</loc>
-        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
+        <lastmod>2018-10-28T09:55:25.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/categories/HyunGeun-Yoon/</loc>
+        <lastmod>2018-10-28T09:55:53.090Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/categories/HyeShin-Oh/</loc>
+        <lastmod>2018-10-28T09:55:53.091Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -140,6 +140,10 @@ blockquote{
   padding: 0;
 }
 
+.author-ul{
+  padding-bottom: 70px;
+}
+
 .general-ul li{
   float: left;
   margin: 0 5px;
@@ -297,7 +301,7 @@ blockquote{
   left: 50%;
   margin-left: -130px;
   top: 50%;
-  margin-top: 150px;
+  margin-top: 130px;
 }
 
 .featured-tags-title{
@@ -311,7 +315,7 @@ blockquote{
 .featured-tags-ul{
   list-style: none;
   padding: 0;
-  max-height: 88px;
+  max-height: 104px;
   overflow: hidden;
 }
 
@@ -332,6 +336,10 @@ blockquote{
   .user-li{
     width: 100%;
   }
+
+  .nav-icon{
+    display: none;
+  }
 }
 
 @media screen and (min-width: 960px){
@@ -349,5 +357,12 @@ blockquote{
     overflow: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar .logo-title{
+    padding-top: 0;
+    position: relative;
+    top: 50%;
+    margin-top: -128.5px;
   }
 }

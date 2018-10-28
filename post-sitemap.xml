@@ -8,8 +8,32 @@
     </url>
 
     <url>
+        <loc>https://databuzz-team.github.io/2018/10/13/hexo-mathjax/</loc>
+        <lastmod>2018-10-28T09:55:53.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/13/hands-on-chapter1/</loc>
+        <lastmod>2018-10-28T09:55:53.090Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/24/Basic-deep-learning-tensorflow-for-beginner-2/</loc>
+        <lastmod>2018-10-28T09:55:25.652Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://databuzz-team.github.io/2018/10/22/Basic-deep-learning-tensorflow-for-beginner/</loc>
-        <lastmod>2018-10-23T07:55:22.388Z</lastmod>
+        <lastmod>2018-10-28T05:31:07.221Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -58,22 +82,6 @@
     <url>
         <loc>https://databuzz-team.github.io/2018/10/10/How-To-Use/</loc>
         <lastmod>2018-10-13T07:04:42.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/13/post/</loc>
-        <lastmod>2018-10-13T05:49:58.514Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/13/hyeshin-first/</loc>
-        <lastmod>2018-10-13T05:44:03.635Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
