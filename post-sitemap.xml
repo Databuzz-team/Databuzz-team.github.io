@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://databuzz-team.github.io/2018/10/22/Basic-deep-learning-tensorflow-for-beginner/</loc>
+        <lastmod>2018-10-28T13:47:10.819Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://databuzz-team.github.io/2018/10/24/Basic-deep-learning-tensorflow-for-beginner-2/</loc>
-        <lastmod>2018-10-28T09:59:20.699Z</lastmod>
+        <lastmod>2018-10-28T13:34:45.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,14 +34,6 @@
     <url>
         <loc>https://databuzz-team.github.io/2018/10/13/hands-on-chapter1/</loc>
         <lastmod>2018-10-28T09:55:53.090Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/22/Basic-deep-learning-tensorflow-for-beginner/</loc>
-        <lastmod>2018-10-28T05:31:07.221Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

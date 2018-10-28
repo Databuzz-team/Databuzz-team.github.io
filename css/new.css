@@ -1,20 +1,30 @@
-body{
-  font-family: 'Boogaloo', 'Stylish', sans-serif, cursive;
-  font-size: 14px;
-  cursor: default;
+#back-to-top{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  box-shadow: 1px 1px 3px #111;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  font-size: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p{
-  color: #333;
+#back-to-top:hover {
+  background: dodgerblue;
 }
 
-li{
-  color: #333;
-}
-
-blockquote{
-  margin: 0;
-  border-left: #999 0.4em solid;
+#back-to-top.show {
+  opacity: 0.8;
 }
 
 .gist{
@@ -41,55 +51,12 @@ blockquote{
   clear: both;
 }
 
-.footer{
-  padding-bottom: 10px;
-}
-
-.footer span{
-  color: #bbb;
-}
-
-.page-top .nav a{
-  color: #999;
-}
-
 .nav-icon{
   color: #999;
   margin-right:5px;
 }
 
 .nav-current{
-  color: #333;
-}
-
-.page-top .nav a.current{
-  /* color: #00a178; */
-  color: #333;
-}
-
-.post .post-title a{
-  /* font-family: 'Cute Font', sans-serif; */
-  color: #333;
-}
-
-.post .post-title a:hover{
-  text-decoration: none;
-  color: #4786D6;
-}
-
-.post .post-footer{
-
-}
-
-.post .post-footer .meta{
-  height: auto;
-}
-
-.post .post-footer .meta .info{
-  float: none;
-}
-
-.sidebar .logo-title .description{
   color: #333;
 }
 
@@ -214,17 +181,6 @@ blockquote{
   border-bottom: 1px solid #f2f2f2;
 }
 
-.listing-tag-div{
-  /* position: absolute;
-  bottom: 10px;
-  left: 56px; */
-}
-
-.post-time{
-  /* position: absolute;
-  bottom: 10px; */
-}
-
 .listing-tag{
   color: #C5C5C5
 }
@@ -235,6 +191,12 @@ blockquote{
 
 .tag-not-hover:hover{
   color: #333!important;
+}
+
+.tag-on-archive{
+  position: absolute;
+  right: 0;
+  bottom: 5px;
 }
 
 .page-top .nav a.current:hover{
@@ -285,14 +247,6 @@ blockquote{
 
 .about-social-icon:first-child{
   margin-left: 0;
-}
-
-.social-github{
-
-}
-
-.social-home{
-
 }
 
 .featured-tags-wrap{
@@ -363,6 +317,6 @@ blockquote{
     padding-top: 0;
     position: relative;
     top: 50%;
-    margin-top: -128.5px;
+    margin-top: -138.5px;
   }
 }

@@ -98,4 +98,5 @@
       return false;
     }
   });
+
 })(jQuery);
