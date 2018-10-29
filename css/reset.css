@@ -1,3 +1,18 @@
+::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #111; */
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #666;
+}
+
 body{
   font-family: 'Boogaloo', 'Stylish', sans-serif, cursive;
   font-size: 14px;
