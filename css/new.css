@@ -51,6 +51,27 @@
   clear: both;
 }
 
+.rss-wrap{
+  margin: 0;
+  font-size: 15px;
+  height: 26px;
+}
+
+.rss-icon-a{
+  font-size: inherit!important;
+  color: #999!important;
+  margin-left: 10px;
+}
+
+.rss-icon-a:hover{
+  color: dodgerblue!important;
+}
+
+.rss-icon{
+  font-size: 14px;
+  line-height: 26px;
+}
+
 .nav-icon{
   color: #999;
   margin-right:5px;
