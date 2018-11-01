@@ -301,6 +301,14 @@
   margin-bottom: 5px;
 }
 
+.notebook-embedded{
+  width: 100%;
+  border: 1px solid #eee;
+  border-bottom: 40px solid #eee;
+  border-radius: 4px;
+  height: 400px;
+}
+
 @media screen and (max-width: 320px){
   .information{
     display: none;
@@ -325,10 +333,10 @@
   .content{
     height: 100%;
     float: none;
-    margin-top: 0px;
     position: absolute;
-    top: 60px;
     right: 0;
+    top: 60px;
+    margin-top: 0px;
     overflow: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
