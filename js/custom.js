@@ -43,7 +43,7 @@ $(document).ready(function() {
     window.location.pathname
   ].join(''));
 
-  $('.sharer__item').click(function(){
+  $('.sharer-item').click(function(){
     var social = $(this).attr('data-n');
     window.open(
       shareUrls[social] + url,
