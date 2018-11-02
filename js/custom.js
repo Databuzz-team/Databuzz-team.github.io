@@ -29,4 +29,27 @@ $(document).ready(function() {
 
   });
 
+  var shareUrls = {
+    facebook:  '//www.facebook.com/sharer.php?u=',
+    twitter:   '//twitter.com/intent/tweet?url=',
+    pinterest: '//pinterest.com/pin/create/button/?url=',
+    pocket:    '//getpocket.com/save?url='
+  };
+
+  var url = encodeURIComponent([
+    window.location.protocol,
+    '//',
+    window.location.host,
+    window.location.pathname
+  ].join(''));
+
+  $('.sharer__item').click(function(){
+    var social = $(this).attr('data-n');
+    window.open(
+      shareUrls[social] + url,
+      'Share to ' + social,
+      'toolbar=0,location=0,menubar=0,height=400,width=600'
+    );
+  });
+
 });

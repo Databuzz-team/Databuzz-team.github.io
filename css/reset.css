@@ -89,6 +89,54 @@ blockquote{
   color: #333;
 }
 
+.post-summary{
+  font-family: Helvetica Neue;
+  -webkit-transition: all .15s linear;
+    -moz-transition: all .15s linear;
+    -o-transition: all .15s linear;
+    -ms-transition: all .15s linear;
+    transition: all .15s linear;
+}
+
+.post-summary:hover{
+  /* color: dodgerblue; */
+}
+
+.post-wrap{
+
+}
+
+.post-wrap-with-thumbnail{
+  width: 66.6666%;
+  margin-left: 33.3333%;
+  min-height: 162px;
+  padding-left: .5em;
+}
+
+.post-thumbnail{
+  width: 33.3333%;
+  height: 162px;
+  padding-right: .5em;
+  position: absolute;
+}
+
+.post-thumbnail-img{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease;
+}
+
+
 @media screen and (min-width: 960px){
   .page-top .information .back_btn{
     left: -50px;

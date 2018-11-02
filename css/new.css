@@ -231,6 +231,10 @@
   position: relative;
 }
 
+.user-li:last-child{
+  margin-bottom: 200px!important;
+}
+
 .user-namecard-title{
   font-size: 25px;
   position: absolute;
@@ -307,6 +311,55 @@
   border-bottom: 40px solid #eee;
   border-radius: 4px;
   height: 400px;
+  overflow: hidden;
+}
+
+.share-to-social{
+  width: 200px;
+  font-size: 20px;
+  line-height: 40px;
+  color: #333;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+
+.sharer{
+  position: absolute;
+  bottom: 0px;
+  left: 65px;
+}
+
+.sharer-item{
+  width: 30px;
+  height: 30px;
+  float: left;
+  text-align: center;
+  color: #999;
+  margin-right: 10px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.sharer-item:hover{
+  color: dodgerblue;
+}
+
+.about-us-wrap{
+  padding: 0 0 30px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.about-us-title{
+
+}
+
+.about-us-article-time{
+  margin-left: 10px;
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 320px){
@@ -322,6 +375,17 @@
 
   .nav-icon{
     display: none;
+  }
+
+}
+
+@media screen and (max-width: 720px){
+  .share-to-social{
+    position: static;
+  }
+
+  .sharer{
+    bottom: 30px;
   }
 }
 
