@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://databuzz-team.github.io/2018/11/05/Back-Propagation/</loc>
+        <lastmod>2018-11-05T08:51:19.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/24/Catboost/</loc>
+        <lastmod>2018-11-05T08:51:13.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://databuzz-team.github.io/2018/10/30/Basic-deep-learning-tensorflow-for-beginner-3/</loc>
         <lastmod>2018-11-01T14:45:15.239Z</lastmod>
         <changefreq>weekly</changefreq>

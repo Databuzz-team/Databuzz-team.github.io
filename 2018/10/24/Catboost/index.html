@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Databuzz, Databuzz.team@gmail.com"><title><MACHINE LEARNING>Catboost 알아보기 · Databuzz's Tech Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end --><meta name="description" content="Machine Learning을 공부하였다면 한번쯤 XGBoost와 LightGBM, H2O를 들어보았을 것이다. 최근 이 분야에서 기존의 기술들을 위협하는 새로운 기술이 나와 이를 소개하고자 한다.
+이 글은 참고블로그 (Towards Data Science)와 참고기"><meta name="keywords" content="DataScience"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/top-image.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/new.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Stylish|Boogaloo"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127200932-1"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/custom.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog<a class="rss-icon-a" href="https://databuzz-team.github.io/atom" target="__blank"><i class='fas fa-rss rss-icon'></i></a></p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Machine Learning </li><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Hexo </li><li class="featured-tags-li tag-li-detail"> Mathjax </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Catboost </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Back Propagation </li><li class="featured-tags-li tag-li-detail"> Deep Learning </li><li class="featured-tags-li tag-li-detail"> Neural Network </li><li class="featured-tags-li tag-li-detail"> Artificial Intelligence </li><li class="featured-tags-li tag-li-detail"> Tensorflow </li><li class="featured-tags-li tag-li-detail"> Regression </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/"><i class="fas fa-home nav-icon"></i>Home</a></li><li><a href="/archives"><i class="fas fa-archive nav-icon"></i>Archives</a></li><li><a href="/tags-and-authors"><i class="fas fa-user-tag nav-icon"></i>Tags & Authors</a></li><li><a href="/about-us"><i class="fas fa-building nav-icon"></i>About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left back-btn-icon" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;MACHINE LEARNING&gt;Catboost 알아보기</a></h3></div><div class="post-content post-detail"><p>Machine Learning을 공부하였다면 한번쯤 XGBoost와 LightGBM, H2O를 들어보았을 것이다. 최근 이 분야에서 기존의 기술들을 위협하는 새로운 기술이 나와 이를 소개하고자 한다.</p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><p>이 글은 <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">참고블로그</a> (Towards Data Science)와 <a href="https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/" target="_blank" rel="noopener">참고기사</a>의 내용을 번역 및 요약 정리하였고 좀 더 자세한 내용은 링크를 통해 확인해볼 수 있다.</p>
+<h3 id="Catboost란-무엇인가"><a href="#Catboost란-무엇인가" class="headerlink" title="Catboost란 무엇인가?"></a>Catboost란 무엇인가?</h3><p>Catboost란 Yandex에서 개발된 오픈 소스 Machine Learning이다. 이 기술은 다양한 데이터 형태를 활용하여 기업이 직면한 문제들을 해결하는데 도움을 준다. 특히 분류 정확성에서 높은 점수를 제공한다.</p>
+<p>Catboost는 Category와 Boosting을 합쳐서 만들어진 이름이다.<br>여기에서 Boost는 Gradient boosting machine learnin algorithm에서 온 말인데 Gradient boosting은 추천 시스템, 예측 등 다양한 분야에서 활용되어지는 강력한 방법이고 Deep Learning과 달리 적은 데이터로도 좋은 결과를 얻을 수 있는 효율적인 방법이다.</p>
+<h3 id="왜-Catboost를-활용하는가"><a href="#왜-Catboost를-활용하는가" class="headerlink" title="왜 Catboost를 활용하는가?"></a>왜 Catboost를 활용하는가?</h3><h4 id="더-좋은-결과"><a href="#더-좋은-결과" class="headerlink" title="더 좋은 결과"></a>더 좋은 결과</h4><p>Catboost는 Benchmark에서 더 좋은 결과를 얻었다.</p>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*vsg1IUlGtzCoNuGo9XqGwg.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+            GBDT Algorithms Benchmark  
+        </a>
+    </span>
+</div>
+
+
+<h4 id="Category-features-사용의-편리성"><a href="#Category-features-사용의-편리성" class="headerlink" title="Category features 사용의 편리성"></a>Category features 사용의 편리성</h4><p>Category features를 사용하기 위해서는 One-Hot-Encoding등 데이터를 전처리할 필요가 있었지만 Catboost에서는 사용자가 다른 작업을 하지 않아도 자동으로 이를 변환하여 사용한다. 이 분야를 공부한 경험이 있다면 이 기능이 얼마나 편리한지를 알 수 있을 것이다. 자세한 내용은 <a href="https://tech.yandex.com/catboost/doc/dg/concepts/algorithm-main-stages_cat-to-numberic-docpage/" target="_blank" rel="noopener">document</a>를 통해 확인할 수 있다.</p>
+<h4 id="빠른-예측"><a href="#빠른-예측" class="headerlink" title="빠른 예측"></a>빠른 예측</h4><p>학습 시간이 다른 GBDT에 보다는 더 오래 걸리는 대신에 예측 시간이 13-16배 정도 더 빠르다.</p>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/2000/1*BE8PZe54DMWe6gFdHlYsxg.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+            Left : CPU, Right : GPU
+        </a>
+    </span>
+</div>
+
+<h4 id="더-나은-기능들"><a href="#더-나은-기능들" class="headerlink" title="더 나은 기능들"></a>더 나은 기능들</h4><ul>
+<li>default parameters값으로 더 나은 성능<br>hyper-parmeter tuning을 하지 않더라도 기본적인 세팅으로도 좋은 결과를 얻을 수 있어 활용성이 뛰어나다. 자세한 내용은 <a href="https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/" target="_blank" rel="noopener">document</a>를 통해 확인할 수 있다.</li>
+</ul>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*znsWIb1X3Eez5LjNf4mg_g.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+            GBDT Algorithms with default parameters Benchmark
+        </a>
+    </span>
+</div>
+
+<ul>
+<li>feature interactions</li>
+</ul>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*VV1eH5Iwz3hJmKWAaV_Y6w.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+    Catboost’s Feature Interactions
+     </a>
+    </span>
+</div>
+
+<ul>
+<li>feature importances</li>
+</ul>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*6Y9gHBQLxk-PoIJLd2wr1g.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+    Catboost’s Feature Importance
+     </a>
+    </span>
+</div>
+
+<ul>
+<li>object(row) importances</li>
+</ul>
+<div>
+    <img src="https://cdn-images-1.medium.com/max/1600/1*ZoMzKdiIyLU9wDelELQMvg.png">
+    <span style="font-size:11px; text-align:center; display:block; color: #999;">
+        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">
+    Catboost’s Object Importance
+    </a>
+    </span>
+</div>
+
+<ul>
+<li>the snapshot</li>
+</ul>
+<h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p>프로젝트 등을 수행하다보면 Catgory feature를 이용하는 것이 상당히 번거롭다는 것을 알 수 있을 것이다. 뿐만 아니라 예측 시간이 오래걸린다면 실제로 시스템에 적용하는데는 큰 문제점을 가지고 있음을 알고 있다.</p>
+<p>다른 Maching Learning algorithms의 단점을 보완해주는 Catboost를 잘 활용한다면 좀 더 나은 시스템을 개발하는데 도움이 될 것이다.</p>
+<h3 id="유용한-자료"><a href="#유용한-자료" class="headerlink" title="유용한 자료"></a>유용한 자료</h3><ul>
+<li><a href="https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/" target="_blank" rel="noopener">Catboost Documentation</a></li>
+<li><a href="https://github.com/catboost/catboost" target="_blank" rel="noopener">Catboost Github</a></li>
+<li><a href="https://catboost.ai/" target="_blank" rel="noopener">Catboost official website</a></li>
+<li><a href="https://arxiv.org/abs/1706.09516" target="_blank" rel="noopener">CatBoost: unbiased boosting with categorical features</a></li>
+</ul>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date tag-not-hover">2018-10-24</span><i class="fa fa-comment-o"></i><a href="/2018/10/24/Catboost/#comments">Comments</a><!-- i.fas.fa-pencil-alt--><!-- a.tag(href=config.root + item.path, title= item.name)!= "Written by " + '<img class="post-footer-author" src="/images/avatar/' + png_name + '.png"> ' + item.name + " "--><a class="tag tag-not-hover">Written by <img class="post-footer-author" src="/images/avatar/hyungeun-yoon.png"> HyunGeun Yoon </a><br><i class="fa fa-tag"></i><!-- a.tag(href=config.root + item.path, title= item.name)= "#" + item.name + " "--><a class="tag tag-not-hover">#Machine Learning </a><!-- a.tag(href=config.root + item.path, title= item.name)= "#" + item.name + " "--><a class="tag tag-not-hover">#Catboost </a><div class="share-to-social">Share on <div class="sharer" id="sharer"> <div class="sharer-item" data-n="facebook"><i class="fab fa-facebook-f"></i></div><div class="sharer-item" data-n="twitter"><i class="fab fa-twitter"></i></div><div class="sharer-item" data-n="pinterest"><i class="fab fa-pinterest"></i></div></div></div></div></div></div></div><div class="share"></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a class="btn" role="navigation" href="/2018/10/30/Basic-deep-learning-tensorflow-for-beginner-3/" title="&lt;Deep Learning&gt; An introduction to Deep Learning with Tensorflow(Part-3)">Previous post</a></li><li class="next pagbuttons"><a class="btn" role="navigation" href="/2018/10/24/Basic-deep-learning-tensorflow-for-beginner-2/" title="&lt;Deep Learning&gt; An introduction to Deep Learning with Tensorflow(Part-2)">Next post</a></li></ul></div><a id="comments"></a><div id="disqus_thread"></div><script>var disqus_shortname = 'Databuzz';
+var disqus_identifier = '2018/10/24/Catboost/';
+var disqus_title = '&lt;MACHINE LEARNING&gt;Catboost 알아보기';
+var disqus_url = 'https://databuzz-team.github.io/2018/10/24/Catboost/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//#{theme.disqus}.disqus.com/count.js" async></script></div></div></div></div><a href="#" id="back-to-top" title="Back to top"><i class="fas fa-angle-up"></i></a><!-- hexo-inject:begin --><!-- hexo-inject:end --></body></html>

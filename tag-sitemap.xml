@@ -17,20 +17,6 @@
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/tags/Artificial-Intelligence/</loc>
-        <lastmod>2018-10-29T00:26:14.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/tags/Deep-Learning/</loc>
-        <lastmod>2018-10-29T00:26:14.549Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://databuzz-team.github.io/tags/Tech-News/</loc>
         <lastmod>2018-10-29T05:53:46.477Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -52,13 +38,6 @@
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/tags/Machine-Learning/</loc>
-        <lastmod>2018-11-01T14:45:15.239Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://databuzz-team.github.io/tags/Tensorflow/</loc>
         <lastmod>2018-11-01T14:45:15.239Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -68,6 +47,48 @@
     <url>
         <loc>https://databuzz-team.github.io/tags/Regression/</loc>
         <lastmod>2018-11-01T14:45:15.239Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Machine-Learning/</loc>
+        <lastmod>2018-11-05T08:51:13.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Catboost/</loc>
+        <lastmod>2018-11-05T08:51:13.621Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Back-Propagation/</loc>
+        <lastmod>2018-11-05T08:51:19.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Deep-Learning/</loc>
+        <lastmod>2018-11-05T08:51:19.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Neural-Network/</loc>
+        <lastmod>2018-11-05T08:51:19.748Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Artificial-Intelligence/</loc>
+        <lastmod>2018-11-05T08:51:19.748Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://databuzz-team.github.io/"/>
-  <updated>2018-11-01T14:45:15.239Z</updated>
+  <updated>2018-11-05T08:51:19.748Z</updated>
   <id>https://databuzz-team.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;Neural Network&gt;Back Propagation에 대한 이해</title>
+    <link href="https://databuzz-team.github.io/2018/11/05/Back-Propagation/"/>
+    <id>https://databuzz-team.github.io/2018/11/05/Back-Propagation/</id>
+    <published>2018-11-05T05:16:52.000Z</published>
+    <updated>2018-11-05T08:51:19.748Z</updated>
+    
+    <content type="html"><![CDATA[<p><br></p><p>이번 포스트는 TensorFlow로 DNN을 구현하기 전에 먼저 인공 신경망을 가능하게 한 <strong>Back Propagation</strong> 에 대한 이해를 도울 수 있는 <a href="https://medium.com/@14prakash/back-propagation-is-very-simple-who-made-it-complicated-97b794c97e5c?fbclid=IwAR2bn8rI7yxT5BC-0Ovy2IvzHEb2z_uaVdaw-uPLK-9-SmI2JoP6EK7do-0" target="_blank" rel="noopener">블로그 Back-Propagation is very simple. Who made it Complicated ? </a>내용을 번역하여 소개하고자 한다.</p><div><img src="https://cdn-images-1.medium.com/max/2000/1*fnU_3MGmFp0LBIzRPx42-w.png"><a style="display: block; text-align: center;" href="https://medium.com/@14prakash/back-propagation-is-very-simple-who-made-it-complicated-97b794c97e5c?fbclid=IwAR2bn8rI7yxT5BC-0Ovy2IvzHEb2z_uaVdaw-uPLK-9-SmI2JoP6EK7do-0" target="_blank" rel="noopener">출처 : [Medium] Back-Propagation is very simple. Who made it Complicated ?</a></div><h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><ul><li><a href="#nn-history">Neural Network 역사 및 Back propagation의 중요성</a></li><li><a href="why-back-propagation">왜 Back propagation를 이해해야 할까?</a></li></ul><h3 id="nn-history" href="#nn-history">Neural Network 역사</h3><p> 1943년, 워런 맥컬록(Warren McCulloch)와 월터 피츠(Walter Pitts)의 수학과 임계 논리(Threshold logic)라 불리는 알고리즘을 바탕으로 신경망을 위한 계산한 모델이 만들어지며 신경망 연구의 초석을 닦으며 <strong>Neural Network</strong> 역사가 시작되었다.</p><p> 하지만, 1969년에 마빈 민스키(Marvin Minsky)와 시모어 페퍼트(Seymour Papert)에 의해 기계학습 논문이 발표된 후 침체되었는데, 그 이유는 두 가지였다.</p><ol><li><p>단층 신경망은 선형으로 분류하기 때문에 아래의 그림처럼 문제가 배타적 논리합 회로(XOR problem)인 경우에는 해결하지 못한다.</p><div><img src="https://cdn-images-1.medium.com/max/2000/0*qdRb80zUpJPtrbRD."><a style="display: block; text-align: center;" href="https://medium.com/@jayeshbahire/the-xor-problem-in-neural-networks-50006411840b" target="_blank" rel="noopener">출처 : [Medium] Back-Propagation is very simple. Who made it Complicated ?</a></div></li><li><p>Computing power가 부족하다.</p></li></ol><p>위의 두 가지 문제점 외에도 가중치를 업데이트하기 위한 회로 수학 계산이 너무 복잡하였기에 <strong>오차역전파법(Back Propagation)</strong> 이 세상에 나오기 전까지는 연구가 침체될 수밖에 없었다.</p><h3 id="why-back-propagation" href="#why-back-propagation">왜 Back propagation를 이해해야 할까?</h3><p>“어차피 TensorFlow를 사용하면 다 자동으로 계산해주는 것인데 왜 우리가 공부해야 하는 것일까?”</p><p>합리적인 질문이다. 공식만 봐도 어려워보이는 이 부분을 공부하는 것이 동기부여가 쉽게 되지않는것이 사실이기 때문에..</p><p>하지만, <a href="https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b" target="_blank" rel="noopener">Yes you should understand backprop</a> 글에서 설명했듯 이 <strong>Back Propagation</strong> 은 <strong>Leaky Abstraction</strong> 라는 것이다.</p><blockquote><p><strong>Leaky Abstraction</strong><br><br>Joel Spolsky이 설명한 <a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/" target="_blank" rel="noopener">The Law of Leaky Abstraction</a>에서 사용된 표현으로써 프로그래밍 언어를 추상화시켜서 내부 구현을 모르도록 만들어놨지만, <strong style="color:red">결국 제대로 사용하려면 내부 구현을 상당 부분 알아야 한다는 것을 의미한다.</strong></p></blockquote><p>이 포스트에서는 인공 신경망의 문제점에 대해서는 다루지 않기 때문에 왜 Leaky Abstraction이라 설명했는지 궁금한 경우에는 위의 블로그 링크를 참고하길 바란다.</p><h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    
+    <!-- <summary type="html">
+    
+    </summary> -->
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Back Propagation" scheme="https://databuzz-team.github.io/tags/Back-Propagation/"/>
+    
+      <category term="Deep Learning" scheme="https://databuzz-team.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Neural Network" scheme="https://databuzz-team.github.io/tags/Neural-Network/"/>
+    
+      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
+    
+  </entry>
   
   <entry>
     <title>&lt;Deep Learning&gt; An introduction to Deep Learning with Tensorflow(Part-3)</title>
@@ -32,13 +58,35 @@
       <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
     
     
-      <category term="Data Science" scheme="https://databuzz-team.github.io/tags/Data-Science/"/>
-    
       <category term="Machine Learning" scheme="https://databuzz-team.github.io/tags/Machine-Learning/"/>
+    
+      <category term="Data Science" scheme="https://databuzz-team.github.io/tags/Data-Science/"/>
     
       <category term="Tensorflow" scheme="https://databuzz-team.github.io/tags/Tensorflow/"/>
     
       <category term="Regression" scheme="https://databuzz-team.github.io/tags/Regression/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&lt;MACHINE LEARNING&gt;Catboost 알아보기</title>
+    <link href="https://databuzz-team.github.io/2018/10/24/Catboost/"/>
+    <id>https://databuzz-team.github.io/2018/10/24/Catboost/</id>
+    <published>2018-10-24T06:47:02.000Z</published>
+    <updated>2018-11-05T08:51:13.621Z</updated>
+    
+    <content type="html"><![CDATA[<p>Machine Learning을 공부하였다면 한번쯤 XGBoost와 LightGBM, H2O를 들어보았을 것이다. 최근 이 분야에서 기존의 기술들을 위협하는 새로운 기술이 나와 이를 소개하고자 한다.</p><p>이 글은 <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">참고블로그</a> (Towards Data Science)와 <a href="https://www.analyticsvidhya.com/blog/2017/08/catboost-automated-categorical-data/" target="_blank" rel="noopener">참고기사</a>의 내용을 번역 및 요약 정리하였고 좀 더 자세한 내용은 링크를 통해 확인해볼 수 있다.</p><h3 id="Catboost란-무엇인가"><a href="#Catboost란-무엇인가" class="headerlink" title="Catboost란 무엇인가?"></a>Catboost란 무엇인가?</h3><p>Catboost란 Yandex에서 개발된 오픈 소스 Machine Learning이다. 이 기술은 다양한 데이터 형태를 활용하여 기업이 직면한 문제들을 해결하는데 도움을 준다. 특히 분류 정확성에서 높은 점수를 제공한다.</p><p>Catboost는 Category와 Boosting을 합쳐서 만들어진 이름이다.<br>여기에서 Boost는 Gradient boosting machine learnin algorithm에서 온 말인데 Gradient boosting은 추천 시스템, 예측 등 다양한 분야에서 활용되어지는 강력한 방법이고 Deep Learning과 달리 적은 데이터로도 좋은 결과를 얻을 수 있는 효율적인 방법이다.</p><h3 id="왜-Catboost를-활용하는가"><a href="#왜-Catboost를-활용하는가" class="headerlink" title="왜 Catboost를 활용하는가?"></a>왜 Catboost를 활용하는가?</h3><h4 id="더-좋은-결과"><a href="#더-좋은-결과" class="headerlink" title="더 좋은 결과"></a>더 좋은 결과</h4><p>Catboost는 Benchmark에서 더 좋은 결과를 얻었다.</p><div>    <img src="https://cdn-images-1.medium.com/max/1600/1*vsg1IUlGtzCoNuGo9XqGwg.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">            GBDT Algorithms Benchmark          </a>    </span></div><h4 id="Category-features-사용의-편리성"><a href="#Category-features-사용의-편리성" class="headerlink" title="Category features 사용의 편리성"></a>Category features 사용의 편리성</h4><p>Category features를 사용하기 위해서는 One-Hot-Encoding등 데이터를 전처리할 필요가 있었지만 Catboost에서는 사용자가 다른 작업을 하지 않아도 자동으로 이를 변환하여 사용한다. 이 분야를 공부한 경험이 있다면 이 기능이 얼마나 편리한지를 알 수 있을 것이다. 자세한 내용은 <a href="https://tech.yandex.com/catboost/doc/dg/concepts/algorithm-main-stages_cat-to-numberic-docpage/" target="_blank" rel="noopener">document</a>를 통해 확인할 수 있다.</p><h4 id="빠른-예측"><a href="#빠른-예측" class="headerlink" title="빠른 예측"></a>빠른 예측</h4><p>학습 시간이 다른 GBDT에 보다는 더 오래 걸리는 대신에 예측 시간이 13-16배 정도 더 빠르다.</p><div>    <img src="https://cdn-images-1.medium.com/max/2000/1*BE8PZe54DMWe6gFdHlYsxg.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">            Left : CPU, Right : GPU        </a>    </span></div><h4 id="더-나은-기능들"><a href="#더-나은-기능들" class="headerlink" title="더 나은 기능들"></a>더 나은 기능들</h4><ul><li>default parameters값으로 더 나은 성능<br>hyper-parmeter tuning을 하지 않더라도 기본적인 세팅으로도 좋은 결과를 얻을 수 있어 활용성이 뛰어나다. 자세한 내용은 <a href="https://tech.yandex.com/catboost/doc/dg/concepts/parameter-tuning-docpage/" target="_blank" rel="noopener">document</a>를 통해 확인할 수 있다.</li></ul><div>    <img src="https://cdn-images-1.medium.com/max/1600/1*znsWIb1X3Eez5LjNf4mg_g.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">            GBDT Algorithms with default parameters Benchmark        </a>    </span></div><ul><li>feature interactions</li></ul><div>    <img src="https://cdn-images-1.medium.com/max/1600/1*VV1eH5Iwz3hJmKWAaV_Y6w.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">    Catboost’s Feature Interactions     </a>    </span></div><ul><li>feature importances</li></ul><div>    <img src="https://cdn-images-1.medium.com/max/1600/1*6Y9gHBQLxk-PoIJLd2wr1g.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">    Catboost’s Feature Importance     </a>    </span></div><ul><li>object(row) importances</li></ul><div>    <img src="https://cdn-images-1.medium.com/max/1600/1*ZoMzKdiIyLU9wDelELQMvg.png">    <span style="font-size:11px; text-align:center; display:block; color: #999;">        <a href="https://towardsdatascience.com/https-medium-com-talperetz24-mastering-the-new-generation-of-gradient-boosting-db04062a7ea2" target="_blank" rel="noopener">    Catboost’s Object Importance    </a>    </span></div><ul><li>the snapshot</li></ul><h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p>프로젝트 등을 수행하다보면 Catgory feature를 이용하는 것이 상당히 번거롭다는 것을 알 수 있을 것이다. 뿐만 아니라 예측 시간이 오래걸린다면 실제로 시스템에 적용하는데는 큰 문제점을 가지고 있음을 알고 있다.</p><p>다른 Maching Learning algorithms의 단점을 보완해주는 Catboost를 잘 활용한다면 좀 더 나은 시스템을 개발하는데 도움이 될 것이다.</p><h3 id="유용한-자료"><a href="#유용한-자료" class="headerlink" title="유용한 자료"></a>유용한 자료</h3><ul><li><a href="https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/" target="_blank" rel="noopener">Catboost Documentation</a></li><li><a href="https://github.com/catboost/catboost" target="_blank" rel="noopener">Catboost Github</a></li><li><a href="https://catboost.ai/" target="_blank" rel="noopener">Catboost official website</a></li><li><a href="https://arxiv.org/abs/1706.09516" target="_blank" rel="noopener">CatBoost: unbiased boosting with categorical features</a></li></ul>]]></content>
+    
+    <!-- <summary type="html">
+    
+    </summary> -->
+    
+      <category term="HyunGeun Yoon" scheme="https://databuzz-team.github.io/categories/HyunGeun-Yoon/"/>
+    
+    
+      <category term="Machine Learning" scheme="https://databuzz-team.github.io/tags/Machine-Learning/"/>
+    
+      <category term="Catboost" scheme="https://databuzz-team.github.io/tags/Catboost/"/>
     
   </entry>
   
@@ -60,9 +108,9 @@
     
       <category term="Machine Learning" scheme="https://databuzz-team.github.io/tags/Machine-Learning/"/>
     
-      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
-    
       <category term="Deep Learning" scheme="https://databuzz-team.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
     
       <category term="Tensorflow" scheme="https://databuzz-team.github.io/tags/Tensorflow/"/>
     
@@ -86,9 +134,9 @@
     
       <category term="Machine Learning" scheme="https://databuzz-team.github.io/tags/Machine-Learning/"/>
     
-      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
-    
       <category term="Deep Learning" scheme="https://databuzz-team.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
     
       <category term="Tensorflow" scheme="https://databuzz-team.github.io/tags/Tensorflow/"/>
     
