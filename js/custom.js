@@ -4,15 +4,16 @@ $(document).ready(function() {
   gtag('js', new Date());
   gtag('config', 'UA-127200932-1');
 
-  var scrollTrigger = 500, // px
+  var scrollTrigger = 500;
 
   backToTop = function (){
     var scrollTop = $('.content').scrollTop();
     if (scrollTop > scrollTrigger) {
-        $('#back-to-top').addClass('show');
+      $('#back-to-top').addClass('show');
     } else {
-        $('#back-to-top').removeClass('show');
+      $('#back-to-top').removeClass('show');
     }
+
   }
 
   backToTop();

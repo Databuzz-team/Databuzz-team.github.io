@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://databuzz-team.github.io/2018/11/05/howto-stackedit/</loc>
+        <lastmod>2018-11-08T15:25:25.530Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://databuzz-team.github.io/2018/11/05/Back-Propagation/</loc>
-        <lastmod>2018-11-05T09:04:38.114Z</lastmod>
+        <lastmod>2018-11-07T09:34:40.941Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -88,40 +96,8 @@
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/2018/10/13/sohyun/</loc>
-        <lastmod>2018-10-17T03:45:31.168Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/13/test/</loc>
-        <lastmod>2018-10-13T07:04:48.252Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://databuzz-team.github.io/2018/10/10/How-To-Use/</loc>
         <lastmod>2018-10-13T07:04:42.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/11/test2/</loc>
-        <lastmod>2018-10-12T01:30:36.001Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/10/test/</loc>
-        <lastmod>2018-10-11T01:03:23.621Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
