@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Databuzz, Databuzz.team@gmail.com"><title><Neural Network> 인공신경망에 대한 이해(Part 1 - Feedforward Propagation) · Databuzz's Tech Blog</title><meta name="description" content="이번 포스트(Part 1)에서는 TensorFlow로 DNN을 구현하기 전에 먼저 기본 개념을 알아보고 다음 포스트(Part 2)에서는 인공 신경망을 가능하게 한 Back Propagation 에 대해 알아보도록 하겠다.(모바일에는 최적화되어있지 않으니 가능하면 PC로"><meta name="keywords" content="DataScience"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/top-image.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/new.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Stylish|Boogaloo"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127200932-1"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/custom.js"></script><script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog<a class="rss-icon-a" href="https://databuzz-team.github.io/atom" target="__blank"><i class='fas fa-rss rss-icon'></i></a></p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Machine Learning </li><li class="featured-tags-li tag-li-detail"> Hexo </li><li class="featured-tags-li tag-li-detail"> Mathjax </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Artificial Intelligence </li><li class="featured-tags-li tag-li-detail"> Deep Learning </li><li class="featured-tags-li tag-li-detail"> Tensorflow </li><li class="featured-tags-li tag-li-detail"> Catboost </li><li class="featured-tags-li tag-li-detail"> Regression </li><li class="featured-tags-li tag-li-detail"> Neural Network </li><li class="featured-tags-li tag-li-detail"> Markdown </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/"><i class="fas fa-home nav-icon"></i>Home</a></li><li><a href="/archives"><i class="fas fa-archive nav-icon"></i>Archives</a></li><li><a href="/tags-and-authors"><i class="fas fa-user-tag nav-icon"></i>Tags & Authors</a></li><li><a href="/about-us"><i class="fas fa-building nav-icon"></i>About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left back-btn-icon" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;Neural Network&gt; 인공신경망에 대한 이해(Part 1 - Feedforward Propagation)</a></h3></div><div class="post-content post-detail"><p><br></p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Databuzz, Databuzz.team@gmail.com"><title><Neural Network> 인공신경망에 대한 이해(Part 1 - Feedforward Propagation) · Databuzz's Tech Blog</title><meta name="description" content="이번 포스트(Part 1)에서는 TensorFlow로 DNN을 구현하기 전에 먼저 기본 개념을 알아보고 다음 포스트(Part 2)에서는 인공 신경망을 가능하게 한 Back Propagation 에 대해 알아보도록 하겠다.(모바일에는 최적화되어있지 않으니 가능하면 PC로"><meta name="keywords" content="DataScience"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/top-image.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/reset.css"><link rel="stylesheet" href="/css/new.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Stylish|Boogaloo"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><script src="/js/jquery.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-127200932-1"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/custom.js"></script><script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});</script></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/main_logo_new.png" style="width:127px;"><h3 class="sidebar_title" title="">DataBuzz</h3><div class="description"><p class="title_description">Awesome Tech Blog<a class="rss-icon-a" href="https://databuzz-team.github.io/atom" target="__blank"><i class='fas fa-rss rss-icon'></i></a></p></div></div></div><div class="featured-tags-wrap"><h1 class="featured-tags-title">FEATURED TAGS</h1><ul class="featured-tags-ul"><li class="featured-tags-li tag-li-detail"> Machine Learning </li><li class="featured-tags-li tag-li-detail"> Data Science </li><li class="featured-tags-li tag-li-detail"> Hexo </li><li class="featured-tags-li tag-li-detail"> Mathjax </li><li class="featured-tags-li tag-li-detail"> Tech News </li><li class="featured-tags-li tag-li-detail"> Git </li><li class="featured-tags-li tag-li-detail"> Artificial Intelligence </li><li class="featured-tags-li tag-li-detail"> Deep Learning </li><li class="featured-tags-li tag-li-detail"> Tensorflow </li><li class="featured-tags-li tag-li-detail"> Catboost </li><li class="featured-tags-li tag-li-detail"> Regression </li><li class="featured-tags-li tag-li-detail"> Neural Network </li><li class="featured-tags-li tag-li-detail"> Markdown </li></ul></div><div class="footer"><span>@ 2018 DataBuzz All Rights Reserved</span><br><span>Hexo Theme by </span><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><span>&nbsp;&nbsp;&nbsp; Edited by </span><a href="https://danialdaehyunnam.github.io"> Danial Nam </a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/"><i class="fas fa-home nav-icon"></i>Home</a></li><li><a href="/archives"><i class="fas fa-archive nav-icon"></i>Archives</a></li><li><a href="/tags-and-authors"><i class="fas fa-user-tag nav-icon"></i>Tags & Authors</a></li><li><a href="/about-us"><i class="fas fa-building nav-icon"></i>About Us</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left back-btn-icon" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img src="/images/sun.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>&lt;Neural Network&gt; 인공신경망에 대한 이해(Part 1 - Feedforward Propagation)</a></h3></div><div class="post-content post-detail"><p><br></p>
 <p>이번 포스트(Part 1)에서는 TensorFlow로 DNN을 구현하기 전에 먼저 기본 개념을 알아보고 다음 포스트(Part 2)에서는 인공 신경망을 가능하게 한 <strong>Back Propagation</strong> 에 대해 알아보도록 하겠다.(모바일에는 최적화되어있지 않으니 가능하면 PC로 보시길 추천한다)</p>
 <div style="display: none;">
 <img src="/images/danial/back-prop/thumbnail.png">
@@ -10,7 +10,7 @@
 <li><a href="#init-network">네트워크 초기화</a></li>
 <li><a href="#layer1">Layer 1 (input -&gt; J)</a></li>
 <li><a href="#layer2">Layer 2 (J -&gt; K)</a></li>
-<li><a href="#layer3">Layer 3 (K -&gt; output)</a></li>
+<li><a href="#layer3">Layer 3 (K -&gt; output)</a><!-- - <a href='#conclusion'>정리</a> --></li>
 </ul>
 </li>
 <li><a href="#cost-function">오차 함수(Cost function)</a></li>
@@ -39,20 +39,24 @@
 
 $$
 Input = \left[ \begin{array}{cccc}
-i_{1} \\ i_{2} \\\end{array} \right]
-W_{ji} = \left[ \begin{array}{cccc}
-W_{j1i1} & W_{j1i2} \\
-W_{j2i1} & W_{j2i2} \\
-W_{j3i1} & W_{j3i2} \\ \end{array} \right]
-W_{kj} = \left[ \begin{array}{cccc}
-W_{k1j1} & W_{k1j2} & W_{k1j3} \\
-W_{k2j1} & W_{k2j2} & W_{k2j3} \\
-W_{k3j1} & W_{k3j2} & W_{k3j3} \\ \end{array} \right]
-W_{ok} = \left[ \begin{array}{cccc}
-W_{o1k1} & W_{o1k2} & W_{o1k3} \\
-W_{o2k1} & W_{o2k2} & W_{o2k3} \\ \end{array} \right]
+i_{1} & i_{2} \\\end{array} \right]
+$$
+$$
+W_{ij} = \left[ \begin{array}{cccc}
+W_{i1j1} & W_{i1j2} & W_{i1j3} \\
+W_{i2j1} & W_{i2j2} & W_{i2j3} \\\end{array} \right]
+W_{jk} = \left[ \begin{array}{cccc}
+W_{j1k1} & W_{j1k2} & W_{j1k3} \\
+W_{j2k1} & W_{j2k2} & W_{j2k3} \\
+W_{j3k1} & W_{j3k2} & W_{j3k3} \\ \end{array} \right]
+W_{ko} = \left[ \begin{array}{cccc}
+W_{k1o1} & W_{k1o2} \\
+W_{k2o1} & W_{k2o2} \\
+W_{k3o1} & W_{k3o2} \\ \end{array} \right]
+$$
+$$
 Output = \left[ \begin{array}{cccc}
-o_{1} \\ o_{2} \\\end{array} \right]
+o_{1} & o_{2} \\\end{array} \right]
 $$
 
 <p>
@@ -70,40 +74,66 @@ $$
 형태의 기저함수를 가지게 되는 것.
 </blockquote>
 <p>
-에 의해서 비선형 문제를 해결할 수 있는 형태로 정보의 차원을 변경하며 전파하는 과정을 거친다. 마지막에는 Output으로 분류인 경우에는 Class 개수만큼, 회귀분석인 경우에는 1의 값을 내보내는 것으로 마무리 된다.
+에 의해서 비선형 문제를 해결할 수 있는 형태로 정보의 차원을 변경하며 전파하는 과정을 거친다. 마지막에는 Output으로 분류인 경우에는 Class 개수만큼, 회귀분석인 경우에는 1개의 실수값을 내보내는 것으로 마무리 된다.
 </p>
 <p>
 <strong>역방향 전파(Back Propagation)</strong> 을 이해하기 위해서는 먼저 인공신경망의 계산 과정인 <strong>순방향 전파(Feedforward propagation)</strong> 를 이해해야 하므로 살펴보도록 하자.
 </p>
+
+<hr>
 <h4 id="layer1" href="#layer1" style="color: #cb4a44; ">Layer 1 (Input -> J)</h4>
 
-<div style="float:left; width:20%;">
+<div style="float:left; width:40%; margin-right: 10px;">
   <img src="/images/danial/back-prop/layer_j.png">
 </div>
-<div style="float:right; width:80%;">
+<div style="">
 
 $$
+\definecolor{first}{RGB}{10, 199, 139}
+\definecolor{second}{RGB}{74, 144, 226}
 \left[ \begin{array}{cccc}
-W_{j1i1} & W_{j1i2} \\
-W_{j2i1} & W_{j2i2} \\
-W_{j3i1} & W_{j3i2} \\ \end{array} \right] \times \left[ \begin{array}{cccc}
-i_{1} \\ i_{2} \\\end{array} \right] + \left[ \begin{array}{cccc}
-b_{j1} \\ b_{j2} \\ b_{j3} \\\end{array} \right]= \left[ \begin{array}{cccc}
-J_{in1} \\ J_{in2} \\ J_{in3} \\\end{array} \right]
+i_{1} & i_{2} \\\end{array} \right] \times
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{i1j1}} & \textcolor{first}{W_{i1j2}} & \textcolor{first}{W_{i1j3}} \\
+\textcolor{second}{W_{i2j1}} &
+\textcolor{second}{W_{i2j2}} &
+\textcolor{second}{W_{i2j3}} \\\end{array} \right] +
+\left[ \begin{array}{cccc}
+b_{j1} & b_{j2} & b_{j3} \\\end{array} \right]
+
+$$
+$$
+\downarrow
+$$
+$$
+\definecolor{first}{RGB}{10, 199, 139}
+\definecolor{second}{RGB}{74, 144, 226}
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{i1j1}} \times i_{1} +
+\textcolor{second}{W_{i2j1}} \times i_{2} + b_{j1} \\
+\textcolor{first}{W_{i1j2}} \times i_{1} +
+\textcolor{second}{W_{i2j2}} \times i_{2} +
+b_{j2} \\
+\textcolor{first}{W_{i1j3}} \times i_{1} +
+\textcolor{second}{W_{i2j3}} \times i_{2} +
+b_{j3} \\
+\end{array} \right]^{T} =
+\left[ \begin{array}{cccc}
+J_{in1} \\ J_{in2} \\ J_{in3} \\\end{array} \right]^{T}
 $$
 
-<p style="padding:0 10%;">
-계산은 어려운게 없으니 따로 설명하지 않겠다. 중요한 점은 Hidden layer는 들어온 값(<strong>J<sub>in</sub></strong>)과 나가는 값(<strong>J<sub>out</sub></strong>)이 다르다는 것이다. 그 과정은 아래에서 살펴보자.
+<p style="">
+  계산은 어려운게 없으니 따로 설명하지 않겠다. 중요한 점은 Hidden layer는 들어온 값(<strong>J<sub>in</sub></strong>)과 나가는 값(<strong>J<sub>out</sub></strong>)이 다르다는 것이다. 그 과정은 아래에서 살펴보자.
 </p>
 </div>
 
 <div class="clearfix" style="clear:both">
-<div style="float:left; width:20%;">
+<div style="float:left; width:40%; margin-right:10px;">
   <img src="/images/danial/back-prop/activation_j.png">
 </div>
-<div style="float:right; width: 80%;">
+<div style="">
 
-<p style="padding:0 10%;">
+<p style="">
 <strong>Hidden layer</strong>의 <strong>Neuron</strong>은 앞서 설명했듯 <strong>기저함수</strong>의 역할을 해야하므로 좌측의 그림처럼 <strong>J<sub>in</sub></strong>이 Activation function에 의해 변한 <strong>J<sub>out</sub></strong>을 다음 레이어에 들어가는 Input이 되게 한다.
 이 포스팅의 예제에서 <strong>활성화 함수(Activation function)</strong> 은 모두 <strong>Logistic Sigmoid</strong> 함수를 사용하기로 한다.
 </p>
@@ -113,103 +143,172 @@ Sigmoid = 1/(1+\mathrm{e}^{-x})
 $$
 
 $$
+Sigmoid(J_{in}) =
 \left[ \begin{array}{cccc}
 1/(1+\mathrm{e}^{-J_{in1}}) \\
 1/(1+\mathrm{e}^{-J_{in2}}) \\
-1/(1+\mathrm{e}^{-J_{in3}}) \\\end{array} \right]
+1/(1+\mathrm{e}^{-J_{in3}}) \\\end{array} \right]^{T}
 = \left[ \begin{array}{cccc}
-J_{out1} \\ J_{out2} \\ J_{out3} \\\end{array} \right]
+J_{out1} \\ J_{out2} \\ J_{out3} \\\end{array} \right]^{T}
 $$
 
-<p style="padding:0 10%;">
-이제는 위에서 설명한 <strong>하이퍼 파라미터에 의해 모양이 바뀌는</strong>이라는 표현이 이해가 더 잘 될 것이다. <strong>J<sub>in</sub></strong>은 w<sub>ji</sub>와 b<sub>j</sub>에 의해 바뀌고 그에 의해 <strong>J<sub>out</sub></strong>이 바뀔 것이므로.
+<p style="">
+이제는 위에서 설명한 <strong>하이퍼 파라미터에 의해 모양이 바뀌는</strong>이라는 표현이 이해가 더 잘 될 것이다. <strong>J<sub>in</sub></strong>은 w<sub>ij</sub>와 b<sub>j</sub>에 의해 바뀌고 그에 의해 <strong>J<sub>out</sub></strong>이 바뀔 것이므로.
 </p>
 </div>
 </div>
 
-<p></p><h4 id="layer2" href="#layer2" style="color: #cb4a44; clear:both; margin-top: 10px;">Layer 2 (J -&gt; K)</h4><p></p>
-<div style="float:left; width:20%;">
+<hr>
+
+<div class="clearfix">
+<h4 id="layer2" href="#layer2" style="color: #cb4a44; clear:both; margin-top: 10px;">Layer 2 (J -> K)</h4>
+<div style="float:left; width:40%; margin-right: 10px;">
   <img src="/images/danial/back-prop/j_k_layer.png">
 </div>
-<div style="float:right; width: 80%;">
+<div style="">
 
 $$
+\definecolor{first}{RGB}{10, 233, 134}
+\definecolor{second}{RGB}{74, 144, 226}
+\definecolor{third}{RGB}{245, 166, 35}
 \left[ \begin{array}{cccc}
-W_{k1j1} & W_{k1j2} & W_{k1j3} \\
-W_{k2j1} & W_{k2j2} & W_{k2j3} \\
-W_{k3j1} & W_{k3j2} & W_{k3j3} \\ \end{array} \right] \times \left[ \begin{array}{cccc}
-J_{out1} \\ J_{out2} \\ J_{out3}\\\end{array} \right] + \left[ \begin{array}{cccc}
-b_{k1} \\ b_{k2} \\ b_{k3} \\\end{array} \right]= \left[ \begin{array}{cccc}
-K_{in1} \\ K_{in2} \\ K_{in3} \\\end{array} \right]
+J_{out1} & J_{out2} & J_{out3}\\\end{array} \right] \times
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{j1k1}} & \textcolor{first}{W_{j1k2}} & \textcolor{first}{W_{j1k3}} \\
+\textcolor{second}{W_{j2k1}} & \textcolor{second}{W_{j2k2}} & \textcolor{second}{W_{j2k3}} \\
+\textcolor{third}{W_{j3k1}} & \textcolor{third}{W_{j3k2}} & \textcolor{third}{W_{j3k3}} \\ \end{array} \right] +
+\left[ \begin{array}{cccc}
+b_{k1} & b_{k2} & b_{k3} \\\end{array} \right]
+$$
+$$
+\downarrow
+$$
+$$
+\definecolor{first}{RGB}{10, 233, 134}
+\definecolor{second}{RGB}{74, 144, 226}
+\definecolor{third}{RGB}{245, 166, 35}
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{j1k1}} \times J_{out1} +
+\textcolor{second}{W_{j2k1}} \times J_{out2} +
+\textcolor{third}{W_{j3k1}} \times J_{out3} + b_{k1}\\
+\textcolor{first}{W_{j1k2}} \times J_{out1} +
+\textcolor{second}{W_{j2k2}} \times J_{out2} +
+\textcolor{third}{W_{j3k2}} \times J_{out3} + b_{k2}\\
+\textcolor{first}{W_{j1k3}} \times J_{out1} +
+\textcolor{second}{W_{j2k3}} \times J_{out2} +
+\textcolor{third}{W_{j3k3}} \times J_{out3} + b_{k3}\\
+\end{array} \right]^{T} =
+ \left[ \begin{array}{cccc}
+K_{in1} \\ K_{in2} \\ K_{in3} \\\end{array} \right]^{T}
 $$
 
-<p style="padding:0 10%;">
+<p style="">
   <strong>K<sub>in</sub></strong>과 <strong>K<sub>out</sub></strong> 사이의 Activation function은 Layer 1에서와 마찬가지로 Logistic Sigmoid를 사용한다.
 </p>
 
 $$
+Sigmoid(K_{in}) =
 \left[ \begin{array}{cccc}
 1/(1+\mathrm{e}^{-K_{in1}}) \\
 1/(1+\mathrm{e}^{-K_{in2}}) \\
-1/(1+\mathrm{e}^{-K_{in3}}) \\\end{array} \right]
+1/(1+\mathrm{e}^{-K_{in3}}) \\\end{array} \right]^{T}
 = \left[ \begin{array}{cccc}
-K_{out1} \\ K_{out2} \\ K_{out3} \\\end{array} \right]
+K_{out1} \\ K_{out2} \\ K_{out3} \\\end{array} \right]^{T}
 $$
 
-<p style="padding:0 10%;">
+<p style="">
   Layer 1과 비교해서 새로운 점이 없으므로 그림상에 Notation은 자세하게 하지 않았다.
 </p>
 </div>
+</div>
+
+<hr>
 
 <p></p><h4 id="layer3" href="#layer3" style="color: #cb4a44; clear:both; margin-top: 10px;">Layer 3 (K -&gt; output)</h4><p></p>
-<div style="float:left; width:20%;">
+<div style="float:left; width:40%; margin-right: 10px;">
   <img src="/images/danial/back-prop/k_o_layer.png">
 </div>
-<div style="float:right; width: 80%;">
+<div style="">
 
 $$
+\definecolor{first}{RGB}{245, 166, 35}
+\definecolor{second}{RGB}{74, 144, 226}
+\definecolor{third}{RGB}{189, 16, 224}
 \left[ \begin{array}{cccc}
-W_{o1k1} & W_{o1k2} & W_{o1k3} \\
-W_{o2k1} & W_{o2k2} & W_{o2k3} \\ \end{array} \right] \times \left[ \begin{array}{cccc}
-K_{out1} \\ K_{out2} \\ K_{out3}\\\end{array} \right] + \left[ \begin{array}{cccc}
-b_{o1} \\ b_{o2} \\\end{array} \right]= \left[ \begin{array}{cccc}
-o_{in1} \\ o_{in2}\\\end{array} \right]
+K_{out1} & K_{out2} & K_{out3}\\\end{array} \right] \times
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{k1o1}} & \textcolor{first}{W_{k1o2}} \\
+\textcolor{second}{W_{k2o1}} & \textcolor{second}{W_{k2o2}} \\
+\textcolor{third}{W_{k3o1}} & \textcolor{third}{W_{k3o2}} \\ \end{array} \right] +
+\left[ \begin{array}{cccc}
+b_{o1} & b_{o2} \\\end{array} \right]
 $$
 
-<p style="padding:0 10%;">
+$$
+\downarrow
+$$
+
+$$
+\definecolor{first}{RGB}{245, 166, 35}
+\definecolor{second}{RGB}{74, 144, 226}
+\definecolor{third}{RGB}{189, 16, 224}
+\left[ \begin{array}{cccc}
+\textcolor{first}{W_{k1o1}} \times K_{out1} +
+\textcolor{second}{W_{k2o1}} \times K_{out2} +
+\textcolor{third}{W_{k3o1}} \times K_{out3} + b_{o1}\\
+\textcolor{first}{W_{k1o2}} \times K_{out1} +
+\textcolor{second}{W_{k2o2}} \times K_{out2} +
+\textcolor{third}{W_{k3o2}} \times K_{out3} + b_{o2}\\
+\end{array} \right]^{T} =
+\left[ \begin{array}{cccc}
+o_{in1} \\ o_{in2}\\\end{array} \right]^{T}
+$$
+
+<p style="">
   Output으로 나가는 값(o<sub>out</sub>)은 우리가 예측하고자하는 Target 값을 가장 잘 보여줄 수 있는 형태로 만들어야한다.
 </p>
-<p style="padding:0 10%;">
+<p style="">
   일반적으로는 <strong>회귀분석</strong>에는 특별한 <strong>활성화 함수 없이</strong> 내보내는 경우가 있지만, 만약 Target 데이터가 0보다 크고 1보다 작은 실수값만을 가진 상황이라면 Logistic Sigmoid을 사용했을 때 더 좋은 결과가 나올수도 있다는 의미다.
 </p>
-<p style="padding:0 10%;">
+<p style="">
   이 포스트에서는 분류 문제라고 가정하여 활성화 함수로는 <strong>Softmax</strong>를 이용하여 확률값처럼 변환시키는 것을 예로 들겠다.
 </p>
 
 
 </div>
 <div class="clearfix" style="clear:both">
-<div style="float:left; width:20%;">
+<div style="float:left; width:40%; margin-right: 10px;">
   <img src="/images/danial/back-prop/softmax_o.png">
 </div>
-<div style="float:right; width: 80%;">
+<div style="">
 
 $$
 Softmax = \mathrm{e}^{o_{ina}}/(\sum_{a=1}^{2}\mathrm{e}^{o_{ina}})
 $$
 
 $$
+Softmax(o_{in}) =
 \left[ \begin{array}{cccc}
-\mathrm{e}^{o_{in1}}/(\sum_{a=1}^{2}\mathrm{e}^{o_{ina}})   \\ \mathrm{e}^{o_{in2}}/(\sum_{a=1}^{2}\mathrm{e}^{o_{ina}})   \\\end{array} \right] = \left[ \begin{array}{cccc}
-o_{out1} \\ o_{out2}\\\end{array} \right]
+\mathrm{e}^{o_{in1}}/(\sum_{a=1}^{2}\mathrm{e}^{o_{ina}})   \\ \mathrm{e}^{o_{in2}}/(\sum_{a=1}^{2}\mathrm{e}^{o_{ina}})   \\\end{array} \right]^{T} = \left[ \begin{array}{cccc}
+o_{out1} \\ o_{out2}\\\end{array} \right]^{T}
 $$
 
-<p style="padding:0 10%;">
-이렇게 Output으로 나온 o<sub>out</sub> 벡터가 우리의 예측값이 되는 것이다.
+<p style="">
+이렇게 Output으로 나온 o<sub>out</sub> 벡터가 우리의 예측값 y_pred이다.
+
+물론 Random하게 초기화된 W, b값에 의해 예측한 값이라고 하기엔 터무니없는 값들이 나올 것임을 명심하자.
 </p>
+
 </div>
 </div>
 
+<hr>
+
+<!-- <h3 id='conclusion' href='#conclusion' style='color: #cb4a44; clear:both; margin-top: 10px;'>정리</h3>
+<p>
+input 데이터와 output은 실재하는 측정된 값이고, 그 사이의 관계를 우리가 알아내는 것이 Machine learning의 목표이므로 우리가 "학습"시키는 대상은 바로 각 layer간에 망처럼 연결된 W, b이다.
+</p>
+<hr> -->
 <h3 id="cost-function" href="#cost-function" style="clear:both; margin-top: 10px;">오차 함수(Cost function)</h3>
 
 <p>로지스틱 활성 함수를 이용한 분류 문제를 풀 때는 정답 y가 클래스 k에 속하는 데이터에 대해서 k번째 값만 1이고 나머지는 0인 one-hot-encoding 벡터를 사용한다.</p>
