@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://databuzz-team.github.io/"/>
-  <updated>2018-11-18T16:39:53.558Z</updated>
+  <updated>2018-11-25T02:01:37.786Z</updated>
   <id>https://databuzz-team.github.io/</id>
   
   <author>
@@ -17,26 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>&lt;Neural Network&gt; 인공신경망에 대한 이해(Part 2 - Back Propagation)</title>
-    <link href="https://databuzz-team.github.io/2018/11/19/Back-Propagation-part2/"/>
-    <id>https://databuzz-team.github.io/2018/11/19/Back-Propagation-part2/</id>
-    <published>2018-11-18T15:24:13.000Z</published>
-    <updated>2018-11-18T16:39:53.558Z</updated>
+    <title>&lt;Scikit Learn&gt;전처리를 위한 변환기 만들기</title>
+    <link href="https://databuzz-team.github.io/2018/11/11/make_pipeline/"/>
+    <id>https://databuzz-team.github.io/2018/11/11/make_pipeline/</id>
+    <published>2018-11-11T02:42:06.000Z</published>
+    <updated>2018-11-25T02:01:37.786Z</updated>
     
-    <content type="html"><![CDATA[<div style="display: none;"><img src="/images/danial/back-prop/thumbnail.png"></div><p><br></p><p>이번 포스트(Part 2)에서는 인공 신경망을 가능하게 한 <strong>Back Propagation</strong> 에 대해 알아보도록 하겠다.(모바일에는 최적화되어있지 않으니 가능하면 PC로 보시길 추천한다)</p><p>만약 인공 신경망의 기본 개념과 <strong>Feedforward Propagation</strong> 에 대해서 잘 모른다면 <a href="https://Databuzz-team.github.io/2018/11/05/Back-Propagation/">이전 포스트(Part 1)</a>를 먼저 보고 오기 바란다.</p><h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><ul><li><a href="#why-back-propagation">왜 Back propagation를 이해해야 할까?</a></li><li><a href="#back-propagation">Back Propagation 설명</a></li></ul><h3 id="why-back-propagation" href="#why-back-propagation">왜 Back propagation를 이해해야 할까?</h3><p>“어차피 TensorFlow를 사용하면 다 자동으로 계산해주는 것인데 왜 우리가 공부해야 하는 것일까?”</p><p>합리적인 질문이다. 공식만 봐도 어려워보이는 이 부분을 공부하는 것이 동기부여가 쉽게 되지않는것이 사실이기 때문에..</p><p>하지만, <a href="https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b" target="_blank" rel="noopener">Yes you should understand backprop</a> 글에서 설명했듯 이 <strong>Back Propagation</strong> 은 <strong>Leaky Abstraction</strong> 라는 것이다.</p><blockquote><p><strong>Leaky Abstraction</strong><br><br>Joel Spolsky이 설명한 <a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/" target="_blank" rel="noopener">The Law of Leaky Abstraction</a>에서 사용된 표현으로써 프로그래밍 언어를 추상화시켜서 내부 구현을 모르도록 만들어놨지만, <strong style="color:red">결국 제대로 사용하려면 내부 구현을 상당 부분 알아야 한다는 것을 의미한다.</strong></p></blockquote><p>이 포스트에서는 인공 신경망의 문제점에 대해서는 다루지 않기 때문에 왜 Leaky Abstraction이라 설명했는지 궁금한 경우에는 위의 블로그 링크를 참고하길 바란다.</p><h2 style="color: red;">이 포스트는 아직 작성 중에 있습니다. 최대한 빨리 작성해서 올리도록 하겠습니다!</h2><h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="1-변환기의-필요성"><a href="#1-변환기의-필요성" class="headerlink" title="1. 변환기의 필요성"></a>1. 변환기의 필요성</h3><p>프로젝트를 진행하다보면 가장 많은 시간이 걸리고 노력이 필요한 부분이 데이터 전처리 과정일 것입니다. 처음 프로젝트를 할때는 경험이 부족해 필요할 때마다 데이터를 변환하다보니 테스트를 위해 분류해둔 테스트 데이터를 변환하기위해 같은 작업을 반복하느라 시간을 낭비하는 경우가 많았습니다.<br>만약 나만의 변환기를 만들어 둔다면 이러한 문제를 해결하는데 도움이 될 것입니다. 기본적으로 Scikit-Learn에서 제공하는 변환기가 많지만 우리가 필요한 모든 변환기가 구현되어 있진 않기때문에 필요에 따라 직접 원하는 변환기를 만들어야 할때가 있습니다.</p><p>이 포스트에서는 그 방법에 대해서 알아 보도록 하겠습니다.</p><p>우선 Scikit-Learn은 덕 타이핑<sup>duck typing</sup>을 지원하므로 fit(), transform(), fit_transform() 메서드를 구현한 파이썬 클래스를 만들면 됩니다. 여기에서 덕 타이핑이란 상속이나 인터페이스 구현이 아니라 객체의 속성이나 메서드가 객체의 유형을 결정하는 방식입니다. 마지막의 fit_transform()은 <a href="https://github.com/scikit-learn/scikit-learn/blob/bac89c253b35a8f1a3827389fbee0f5bebcbc985/sklearn/base.py#L435" target="_blank" rel="noopener">TransformerMixin</a>으로 구현이 되어 있고 이를 상속하면 자동으로 생성됩니다.<br>또한 <a href="https://github.com/scikit-learn/scikit-learn/blob/bac89c253b35a8f1a3827389fbee0f5bebcbc985/sklearn/base.py#L129" target="_blank" rel="noopener">BaseEstimator</a>를 상속하면 하이퍼파라미터 튜닝에 필요한 두 메서드 get_params()와 set_params()를 얻게 됩니다. 이때 생성자에 <code>*args</code>나 <code>**kargs</code>를 사용하지 않아야 합니다. 자세한 내용은 아래의 예시를 통해서 설명하겠습니다. 참고로 Scikit-Learn에 구현되어 있는 코드는 링크를 통해 확인해 볼 수 있습니다.</p><h3 id="2-예시"><a href="#2-예시" class="headerlink" title="2. 예시"></a>2. 예시</h3><p>예시 코드는 <a href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</a>에서 제공하는 <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener">Titanic</a>데이터를 활용하겠습니다. 이 글은 변환기를 만드는 방법에 대한 설명이라 전처리 방법은 간단한 방법으로 구현하여 올바른 방법이 아닐 수 있음을 말씁드립니다.</p><div><img src="/images/HyunGeun/make_pipeline/Titanic_Data.png"><span style="font-size:12px; text-align:center; display:block; color: #999;"> Titanic Data</span></div><p>위 그림에서 데이터를 살펴보면 age에 NaN값이 존재함을 알 수 있습니다. NaN값을 처리하는 다양한 방법이 있지만 여기에서는 간단하게 모든 age값의 평균으로 채워 넣겠습니다.</p><div><img src="/images/HyunGeun/make_pipeline/Age_Transformer.png"><span style="font-size:12px; text-align:center; display:block; color: #999;"> Age Transformer</span></div><p>위 코드와 같이 용도에 따라서 fit(), transform()을 만들어 주고 TransformerMix을 상속해주기만 하면 fit_transform()이 생성됩니다. 여러가지의 변환기를 연결시켜주는 Pipeline을 만들기 위해 name값을 first name만 표시하는 변환기를 만들어 보겠습니다.</p><div><img src="/images/HyunGeun/make_pipeline/Name_Transformer.png"><span style="font-size:12px; text-align:center; display:block; color: #999;"> Name Transformer</span></div><p>이제 두 변환기를 Pipeline으로 연결하겠습니다.</p><div><img src="/images/HyunGeun/make_pipeline/Pipeline.png"><span style="font-size:12px; text-align:center; display:block; color: #999;"> Pipeline</span></div><p>Pipeline으로 합쳐진 변환기의 결과를 보면 알 수 있듯이 위의 두 변환기를 각각 적용한 것을 하나의 pipeline으로 수행이 가능합니다. 이러한 방법으로 나만의 변환기를 만들어 사용할 수 있습니다.</p><h3 id="3-결론"><a href="#3-결론" class="headerlink" title="3. 결론"></a>3. 결론</h3><p>위의 예시로 보았듯이 크게 어렵지 않게 변환기를 만들수 있었습니다. 사이킷런의 FeatureUnion을 사용하면 여러개의 pipeline을 하나의 pipeline으로 합칠 수도 있습니다. 하지만 아직 사이킷런의 pipeline에는 Pandas의 DataFrame을 직접 주입할 수 없고 결과도 array로 반환되기 때문에 이를 염두에 두고 만들어야 합니다. 필요에 따라서는 필요한 특성만을 선택하는 변환기를 따로 만들어야 하는 경우도 있습니다. 처음에는 어려울 수도 있지만 간단한 것부터 만들면서 원리를 익혀간다면 필요한 변환기를 만들 수 있을 것입니다.   </p><p>※ 이 글의 내용은 <a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;mallGb=KOR&amp;barcode=9791162240731&amp;orderClick=LAG&amp;Kc=" target="_blank" rel="noopener">Hands-On Machine Learning with Scikit-learn &amp; TensorFlow</a> 를 참고하여 작성하였습니다.</p>]]></content>
     
     <!-- <summary type="html">
     
     </summary> -->
     
-      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+      <category term="HyunGeun Yoon" scheme="https://databuzz-team.github.io/categories/HyunGeun-Yoon/"/>
     
     
-      <category term="Artificial Intelligence" scheme="https://databuzz-team.github.io/tags/Artificial-Intelligence/"/>
-    
-      <category term="Deep Learning" scheme="https://databuzz-team.github.io/tags/Deep-Learning/"/>
-    
-      <category term="Neural Network" scheme="https://databuzz-team.github.io/tags/Neural-Network/"/>
+      <category term="Scikit Learn" scheme="https://databuzz-team.github.io/tags/Scikit-Learn/"/>
     
   </entry>
   
