@@ -114,10 +114,10 @@ blockquote{
 }
 
 .post-wrap-with-thumbnail{
-  width: 66.6666%;
+  width: 65.6666%;
   margin-left: 33.3333%;
   min-height: 162px;
-  padding-left: .5em;
+  padding-left: 1%;
 }
 
 .post-thumbnail{
@@ -141,6 +141,8 @@ blockquote{
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease,-webkit-transform .3s ease;
+  border-radius: 4px;
+  border: 1px solid #f7f7f7;
 }
 
 
