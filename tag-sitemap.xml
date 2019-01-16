@@ -102,7 +102,21 @@
 
     <url>
         <loc>https://databuzz-team.github.io/tags/Data-Science/</loc>
-        <lastmod>2018-12-26T10:06:34.023Z</lastmod>
+        <lastmod>2018-12-27T06:40:14.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Portfolio/</loc>
+        <lastmod>2018-12-27T06:40:14.398Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/tags/Resume/</loc>
+        <lastmod>2018-12-27T06:40:14.398Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
