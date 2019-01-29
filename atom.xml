@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://databuzz-team.github.io/"/>
-  <updated>2019-01-21T12:34:17.402Z</updated>
+  <updated>2019-01-29T16:39:07.030Z</updated>
   <id>https://databuzz-team.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&lt;Tensorflow&gt; Tensorflow에서 Graph와 Session의 차이</title>
+    <link href="https://databuzz-team.github.io/2019/01/30/difference-between-graph-and-session/"/>
+    <id>https://databuzz-team.github.io/2019/01/30/difference-between-graph-and-session/</id>
+    <published>2019-01-29T16:07:47.000Z</published>
+    <updated>2019-01-29T16:39:07.030Z</updated>
+    
+    <content type="html"><![CDATA[<div style="display: none;"><img src="/images/danial/tensorflow.jpeg"></div><h3 id="About"><a href="#About" class="headerlink" title="About"></a>About</h3><p>Tensorflow로 이것저것 도전하면서<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ValueError: Operation name: <span class="string">"init"</span></span><br><span class="line">op: <span class="string">"NoOp"</span></span><br><span class="line">input: <span class="string">"^val/Assign"</span></span><br><span class="line"> <span class="keyword">is</span> <span class="keyword">not</span> an element of this graph.</span><br></pre></td></tr></table></figure></p><p>오류라던가<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tensor Tensor(<span class="string">"val:0"</span>, shape=(), dtype=int32_ref) <span class="keyword">is</span> <span class="keyword">not</span> an element of this graph.</span><br></pre></td></tr></table></figure></p><p>와 같은 오류들을 마주치면서 graph에 대해서 좀 더 깊게 이해하는 것이 좋겠다는 생각이 들었다.</p><p>그래서 찾던 도중에 좋은 예제가 있어서 이번 포스팅을 통해서 소개하고자한다.</p><h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph?"></a>Graph?</h3><ol><li>Graph는 operation을 정의한 것을 말한다. Tensor와 Node간의 계산 등을 포함한 설계도를 의미하며 Data와는 관계가 없다.</li><li>Graph를 Session을 통해서 실행할 때, 우리가 layer간에 설치한 dimensions나 type등을 체크하며 문제가 있을시에는 예외를 발생시킨다.</li><li>Graph를 실행하기 위해서는 Data를 feed 해야한다.</li></ol><h3 id="Session"><a href="#Session" class="headerlink" title="Session?"></a>Session?</h3><p>Graph에게 전화를 거는 것이다. 특정 Graph에게 전화를 걸고 우리가 원하는 결과를 얻기위해 일을 시키는 것이라고 생각하면 된다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session(graph=graph_we_want_to_connect) <span class="keyword">as</span> sess:</span><br><span class="line">  sess.run([op], feed_dict=&#123;data:data&#125;)</span><br></pre></td></tr></table></figure></p><h3 id="실습"><a href="#실습" class="headerlink" title="실습"></a>실습</h3><p>위의 뜻을 해석해보면 다양한 모델(Graph)을 만들고 세션마다 원하는 모델에 연결해서 학습을 진행할 수 있다는 것이다.</p><p>무슨 뜻인지 아래의 예제를 통해서 확인해보자.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">graph_1 = tf.Graph()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> graph_1.as_default():</span><br><span class="line">  W_1 = tf.Variable(<span class="number">100</span>, name=<span class="string">"graph_1_W"</span>)</span><br><span class="line">  init_graph_1 = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line">graph_2 = tf.Graph()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> graph_2.as_default():</span><br><span class="line">  W_2 = tf.Variable(<span class="number">200</span>, name=<span class="string">"graph_2_W"</span>)</span><br><span class="line">  init_graph_2 = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session(graph=graph_1) <span class="keyword">as</span> sess:</span><br><span class="line">  sess.run(init_graph_1)</span><br><span class="line">  print(sess.run(W_1))</span><br><span class="line"></span><br><span class="line"><span class="comment"># output 100</span></span><br></pre></td></tr></table></figure><p>이 경우에 아래처럼 실행하면<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session(graph=graph_1) <span class="keyword">as</span> sess:</span><br><span class="line">  sess.run(init_graph_2)</span><br><span class="line">  print(sess.run(W_1))</span><br></pre></td></tr></table></figure></p><p>아래같은 오류가 난다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Operation name: <span class="string">"init"</span></span><br><span class="line">op: <span class="string">"NoOp"</span></span><br><span class="line">input: <span class="string">"^graph_2_W/Assign"</span></span><br><span class="line"> <span class="keyword">is</span> <span class="keyword">not</span> an element of this graph.</span><br></pre></td></tr></table></figure></p><p>오류 의미 그대로이다. 우리가 실행하고자 한 init_graph_2가 graph_1에 해당하는 것이 아니어서 오류가 발생한 것이다.</p><p>변수의 경우도 마찬가지로 아래처럼 실행하면 오류가 발생한다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session(graph=graph_1) <span class="keyword">as</span> sess:</span><br><span class="line">  sess.run(init_graph_1)</span><br><span class="line">  print(sess.run(W_2))</span><br></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tensor(<span class="string">"graph_2_W:0"</span>, shape=(), dtype=int32_ref) <span class="keyword">is</span> <span class="keyword">not</span> an element of this graph.</span><br></pre></td></tr></table></figure><h3 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h3><p>Graph는 모델이며, Session은 원하는 모델을 선택하여 전화를 걸고 일을 시키는 행위를 말한다.</p><h3 id="Related-Posts"><a href="#Related-Posts" class="headerlink" title="Related Posts"></a>Related Posts</h3><p><a href="http://goingmyway.cn/2017/07/14/Understanding-Session-and-Graph/" target="_blank" rel="noopener">Understanding Session and Graph</a></p>]]></content>
+    
+    <!-- <summary type="html">
+    
+    </summary> -->
+    
+      <category term="Danial Nam" scheme="https://databuzz-team.github.io/categories/Danial-Nam/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://databuzz-team.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Tensorflow" scheme="https://databuzz-team.github.io/tags/Tensorflow/"/>
+    
+      <category term="Graph" scheme="https://databuzz-team.github.io/tags/Graph/"/>
+    
+      <category term="Session" scheme="https://databuzz-team.github.io/tags/Session/"/>
+    
+  </entry>
   
   <entry>
     <title>&lt;Neural Network&gt; 인공신경망에 대한 이해(Part 2 - Back Propagation)</title>
