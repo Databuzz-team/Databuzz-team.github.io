@@ -145,6 +145,58 @@ blockquote{
   border: 1px solid #f7f7f7;
 }
 
+.danthetech-intro-wrap{
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,
+  -webkit-transform .3s ease;
+  width: 80%;
+  position: relative;
+  display: flex;
+  margin-top: 32px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #111;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.danthetech-intro-a{
+  text-decoration: none;
+}
+
+.danthetech-intro-title{
+  font-family: 'Boogaloo', 'Stylish', sans-serif, cursive;
+  font-size: 20px;
+  text-align: left;
+  padding: 0px 5px;
+  margin: 0;
+}
+
+.danthetech-img-wrap{
+  width: 20%;
+  height: 100%;
+  float: left;
+  object-fit: cover;
+}
+
+.danthetech-p-wrap{
+  width: 80%;
+  float: left;
+}
+
+.danthetech-intro-p{
+  font-size: 12px;
+  margin: 5px;
+}
+
+.danthetech-intro-strong{
+  font-weight: bold;
+  color: #cb4a44;
+}
+
 
 @media screen and (min-width: 960px){
   .page-top .information .back_btn{
