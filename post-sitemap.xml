@@ -8,72 +8,8 @@
     </url>
 
     <url>
-        <loc>https://databuzz-team.github.io/2018/10/15/The-Most-in-Demand-Skills-for-Data-Scientists/</loc>
-        <lastmod>2019-09-08T14:50:36.083Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://databuzz-team.github.io/2018/10/21/Handle-Imbalanced-Data/</loc>
-        <lastmod>2019-09-08T14:49:44.276Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/21/Github-Gist/</loc>
-        <lastmod>2019-09-08T14:47:44.290Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/22/Basic-deep-learning-tensorflow-for-beginner/</loc>
-        <lastmod>2019-09-08T14:46:39.895Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/24/Basic-deep-learning-tensorflow-for-beginner-2/</loc>
-        <lastmod>2019-09-08T14:43:20.342Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/10/30/Basic-deep-learning-tensorflow-for-beginner-3/</loc>
-        <lastmod>2019-09-08T14:42:31.593Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/12/23/how-to-build-a-data-science-portfolio/</loc>
-        <lastmod>2019-09-08T14:41:54.896Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/11/05/Back-Propagation/</loc>
-        <lastmod>2019-09-08T14:41:25.064Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://databuzz-team.github.io/2018/12/27/Back-Propagation-Part-2/</loc>
-        <lastmod>2019-09-08T14:39:53.110Z</lastmod>
+        <lastmod>2020-10-09T10:11:39.114Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -81,7 +17,7 @@
 
     <url>
         <loc>https://databuzz-team.github.io/2019/01/30/difference-between-graph-and-session/</loc>
-        <lastmod>2019-09-08T14:38:58.838Z</lastmod>
+        <lastmod>2020-10-09T10:11:34.616Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +25,71 @@
 
     <url>
         <loc>https://databuzz-team.github.io/2019/01/30/Basic-dnn-using-tensorflow/</loc>
-        <lastmod>2019-09-08T14:38:56.139Z</lastmod>
+        <lastmod>2020-10-09T10:11:28.888Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/12/27/Back-Propagation-Part-2/</loc>
+        <lastmod>2020-10-09T10:11:24.084Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/12/23/how-to-build-a-data-science-portfolio/</loc>
+        <lastmod>2020-10-09T10:11:18.484Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/11/05/Back-Propagation/</loc>
+        <lastmod>2020-10-09T10:11:10.820Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/30/Basic-deep-learning-tensorflow-for-beginner-3/</loc>
+        <lastmod>2020-10-09T10:11:05.276Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/24/Basic-deep-learning-tensorflow-for-beginner-2/</loc>
+        <lastmod>2020-10-09T10:10:59.224Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/22/Basic-deep-learning-tensorflow-for-beginner/</loc>
+        <lastmod>2020-10-09T10:10:52.540Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/15/The-Most-in-Demand-Skills-for-Data-Scientists/</loc>
+        <lastmod>2020-10-09T10:10:45.336Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://databuzz-team.github.io/2018/10/21/Github-Gist/</loc>
+        <lastmod>2020-10-09T09:47:08.741Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
